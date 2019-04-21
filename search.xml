@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[hexo博客搭建]]></title>
+    <url>%2F2019%2F04%2F21%2Fhexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。 一 博客搭建过程1 Q: 如何搭建博客 S1 实现基本博客功能，参考这个文档即可: hexo教程：github page+独立域名搭建(1) S2 配置博客主题，依次参考以下文档: 01 hexo的next主题个性化配置教程 02 next官方文档 03 底部文字居中 04 代码块复制功能 S3 利用git分支进行多终端工作，具体可见: hexo教程:基本配置+更换主题+多终端工作+coding page部署分流(2) S4 发布步骤,代码见下: 1234567hexo cleanhexo s --debughexo dhexo g]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F04%2F20%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
