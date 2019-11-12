@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="instanceof,">
+  <meta name="keywords" content="对象继承,">
 
 
 
@@ -90,20 +90,18 @@
 
 
 
-<meta name="description" content="本文模拟实现了 JS里 instanceof关键字的功能。">
-<meta name="keywords" content="instanceof">
+<meta name="description" content="本篇主要介绍 JS中面向对象继承的实现方法。">
+<meta name="keywords" content="对象继承">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面向对象之 instanceof模拟实现">
-<meta property="og:url" content="http://yoursite.com/2019/11/10/面向对象之 instanceof模拟实现/index.html">
+<meta property="og:title" content="面向对象之 对象继承方式">
+<meta property="og:url" content="http://yoursite.com/2019/11/12/面向对象之 对象继承方式/index.html">
 <meta property="og:site_name" content="Ygm的博客">
-<meta property="og:description" content="本文模拟实现了 JS里 instanceof关键字的功能。">
+<meta property="og:description" content="本篇主要介绍 JS中面向对象继承的实现方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/7/14/16bef984f537cf1f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:updated_time" content="2019-11-10T07:40:49.970Z">
+<meta property="og:updated_time" content="2019-11-12T15:42:49.571Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面向对象之 instanceof模拟实现">
-<meta name="twitter:description" content="本文模拟实现了 JS里 instanceof关键字的功能。">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/7/14/16bef984f537cf1f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta name="twitter:title" content="面向对象之 对象继承方式">
+<meta name="twitter:description" content="本篇主要介绍 JS中面向对象继承的实现方法。">
 
 
 
@@ -133,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/11/10/面向对象之 instanceof模拟实现/">
+  <link rel="canonical" href="http://yoursite.com/2019/11/12/面向对象之 对象继承方式/">
 
 
 
 
 
-  <title>面向对象之 instanceof模拟实现 | Ygm的博客</title>
+  <title>面向对象之 对象继承方式 | Ygm的博客</title>
   
 
 
@@ -299,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/10/面向对象之 instanceof模拟实现/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/12/面向对象之 对象继承方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ygm">
@@ -316,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">面向对象之 instanceof模拟实现</h1>
+          <h1 class="post-title" itemprop="name headline">面向对象之 对象继承方式</h1>
         
 
         <div class="post-meta">
@@ -328,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-10T15:38:06+08:00">
-                2019-11-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-12T10:08:40+08:00">
+                2019-11-12
               </time>
             
 
@@ -351,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/instanceof/" itemprop="url" rel="index">
-                    <span itemprop="name">instanceof</span>
+                  <a href="/categories/对象-继承/" itemprop="url" rel="index">
+                    <span itemprop="name">对象 继承</span>
                   </a>
                 </span>
 
@@ -382,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  330
+                  706
                 </span>
               
 
@@ -398,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -419,28 +417,26 @@
       
 
       
-        <p>本文模拟实现了 JS里 instanceof关键字的功能。<br><a id="more"></a></p>
-<h1 id="面向对象之-instanceof模拟实现"><a href="#面向对象之-instanceof模拟实现" class="headerlink" title="面向对象之 instanceof模拟实现"></a>面向对象之 instanceof模拟实现</h1><p>目录:</p>
+        <p>本篇主要介绍 JS中面向对象继承的实现方法。<br><a id="more"></a></p>
+<h1 id="面向对象之-对象继承方式"><a href="#面向对象之-对象继承方式" class="headerlink" title="面向对象之 对象继承方式"></a>面向对象之 对象继承方式</h1><p>目录:</p>
 <p>1 <a href="#1">预读文档</a></p>
-<p>2 <a href="#2">instanceof 本质和实现</a></p>
-<p>3 <a href="#3">instanceof 再次理解原型链</a></p>
-<h2 id="1-预读文档"><a href="#1-预读文档" class="headerlink" title="1 预读文档 "></a><span id="1">1 预读文档 </span></h2><p>1 <a href="https://juejin.im/post/5cb3e7e0e51d456e896349d3" target="_blank" rel="noopener">instanceof原理</a></p>
-<p>2 <a href="https://juejin.im/post/5d2addffe51d455c8838e208" target="_blank" rel="noopener">关于instanceof和原型链</a></p>
+<p>2 <a href="#2">继承方法实现</a></p>
+<h2 id="1-预读文档"><a href="#1-预读文档" class="headerlink" title="1 预读文档 "></a><span id="1">1 预读文档 </span></h2><p>1 <a href="https://github.com/mqyqingfeng/Blog/issues/16" target="_blank" rel="noopener">JS深入之 继承的多种方式和优缺点</a></p>
 <p>阅读原因: 直接参考文档</p>
-<h2 id="2-instanceof-本质-和-实现"><a href="#2-instanceof-本质-和-实现" class="headerlink" title=" 2 instanceof 本质 和 实现 "></a><span id="2"> 2 instanceof 本质 和 实现 </span></h2><p>1 Q: instanceof的实现原理是什么</p>
-<p>A:</p>
-<p>S1 instaceof的实现原理，是递归查找原型链的过程</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj1 <span class="keyword">instanceof</span> Fn</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不断查找obj.__proto__.__proto__......, 只有其中有一环指向Fn.prototype, 则为true</span></span><br></pre></td></tr></table></figure>
-<p>2 Q: 手写出instanceof的实现代码</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mockInstanceof = <span class="function"><span class="keyword">function</span>(<span class="params">left, right</span>) </span>&#123;  <span class="comment">// left表示左侧对象(实例)，right表示右侧函数对象参数</span></span><br><span class="line">  <span class="keyword">let</span> src = left.__proto__</span><br><span class="line">  <span class="keyword">let</span> target = right.prototype</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (src === <span class="literal">null</span>) &#123;     <span class="comment">// 原型链对象遍历到顶层时</span></span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span> </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (src === target) &#123;   <span class="comment">// 与显式对象严格相等时</span></span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    src = src.__proto__      <span class="comment">// 递归遍历原型链</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-instanceof-再次理解原型链"><a href="#3-instanceof-再次理解原型链" class="headerlink" title=" 3 instanceof 再次理解原型链 "></a><span id="3"> 3 instanceof 再次理解原型链 </span></h2><p>1 Q: 原型链的递归值分别是哪些, 或者说，原型链的完整流程是什么</p>
-<p>A: 3句话来理解下图即可</p>
-<p>S1 (实例)对象 都有<strong>proto</strong>属性</p>
-<p>S2 构造函数对象 同时具有 <strong>proto</strong>属性 和 prototype属性</p>
-<p>S3 <strong>proto</strong>可以近似理解为 父子关系</p>
-<p>最后以一张经典图结束</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/7/14/16bef984f537cf1f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="原型链经典图"></p>
-
+<h2 id="2-继承方法实现"><a href="#2-继承方法实现" class="headerlink" title=" 2 继承方法实现 "></a><span id="2"> 2 继承方法实现 </span></h2><p>1 Q: JS中实现 对象继承的方式有哪些</p>
+<p>A: </p>
+<p>S1 方法1: 原型链继承: <code>child.pty = new Parent()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.prices = [<span class="number">20</span>, <span class="number">40</span>]</span><br><span class="line">&#125;</span><br><span class="line">Parent.prototype.showPrice = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.prices)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">Child.prototype = <span class="keyword">new</span> Parent()</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ex1 = <span class="keyword">new</span> Child()   <span class="comment">// ex1.__ptot0__ =&gt; Child.pty === obj: &#123;prices&#125; =&gt; Parent.pty</span></span><br><span class="line"><span class="keyword">let</span> ex2 = <span class="keyword">new</span> Child()</span><br><span class="line"></span><br><span class="line">ex1.prices.push(<span class="number">60</span>)</span><br><span class="line">ex2.showPrice()  <span class="comment">// [20, 40, 60]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 缺点: 子类不能传入参数 + 引用类型数据在子类实例中会 互相影响</span></span><br></pre></td></tr></table></figure>
+<p>S2 方法2: 经典继承: <code>Parent.call(this)</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">price</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = [<span class="number">1</span>]</span><br><span class="line">  result.push(price)</span><br><span class="line">  <span class="keyword">this</span>.prices = result</span><br><span class="line">&#125;</span><br><span class="line">Parent.prototype.showPrice = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.prices)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">price</span>) </span>&#123;</span><br><span class="line">  Parent.call(<span class="keyword">this</span>, price)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ex1 = <span class="keyword">new</span> Child(<span class="number">2</span>)   <span class="comment">// ex1.prices = [1, 2] + ex1.__proto__ === Child.pty</span></span><br><span class="line"><span class="keyword">let</span> ex2 = <span class="keyword">new</span> Child(<span class="number">3</span>)   <span class="comment">// ex2.prices = [1, 3] + ex2.pro === Child.pty</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ex1.prices)   <span class="comment">// [1, 2]</span></span><br><span class="line"><span class="built_in">console</span>.log(ex2.prices)   <span class="comment">// [1, 3]</span></span><br><span class="line"><span class="built_in">console</span>.log(ex1.showPrice)  <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 缺点: 子类实例不能访问 父类原型上的方法 + 每次创建子类实例都会 调用一次父类</span></span><br></pre></td></tr></table></figure>
+<p>S3 方法3: 组合继承: <code>child.pro = new Parent +  Parent.call(this)</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.ages = [<span class="number">1</span>,<span class="number">3</span>]</span><br><span class="line">&#125;</span><br><span class="line">Parent.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  Parent.call(<span class="keyword">this</span>, name)</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = <span class="keyword">new</span> Parent()    <span class="comment">// child.pty === &#123;name, ages&#125;,  child.pty.__proto__ ===  Parent.prototype</span></span><br><span class="line">Child.prototype.constructor = Child;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ex1 = <span class="keyword">new</span> Child(<span class="string">'name1'</span>)    </span><br><span class="line"><span class="keyword">let</span> ex2 = <span class="keyword">new</span> Child(<span class="string">'name2'</span>)</span><br><span class="line">ex1.ages.push(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ex1)    <span class="comment">// &#123;ages: [1, 3, 5],  name: "name1"&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(ex2)    <span class="comment">// &#123;ages: [1, 3],  name: "name2"&#125;</span></span><br><span class="line">ex1.getName()       <span class="comment">// name1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 缺点: 子类实例 和 子类原型对象上 都会调用一次父类方法,  实例和原型对象上存在同名参数</span></span><br></pre></td></tr></table></figure>
+<p>S4 方法4: 原型式继承: <code>object.create的模拟实现</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createObj</span>(<span class="params">parentObj</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">child</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  child.prototype = parentObj</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> child()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = &#123;<span class="attr">name</span>: <span class="string">'test'</span>, <span class="attr">ages</span>: [<span class="number">2</span>,<span class="number">4</span>]&#125;</span><br><span class="line"><span class="keyword">let</span> ex1 = createObj(p1)</span><br><span class="line"><span class="keyword">let</span> ex2 = createObj(p1)</span><br><span class="line"></span><br><span class="line">ex1.ages.push(<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ex1.ages)   <span class="comment">// [2,4,6]</span></span><br><span class="line"><span class="built_in">console</span>.log(ex2.ages)  <span class="comment">// [2,4,6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 缺点: 同原型链继承</span></span><br></pre></td></tr></table></figure>
+<p>S5 方法5: 寄生组合式继承: <code>Parent.call(this) + 原型对象 原型式继承</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.ages = [<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">&#125;</span><br><span class="line">Parent.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  Parent.call(<span class="keyword">this</span>, name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> temp = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">temp.prototype = Parent.prototype</span><br><span class="line">Child.prototype = <span class="keyword">new</span> temp()       <span class="comment">// 不会再次执行Parent一次</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ex1 = <span class="keyword">new</span> Child(<span class="string">'name1'</span>)  </span><br><span class="line"><span class="keyword">let</span> ex2 = <span class="keyword">new</span> Child(<span class="string">'name2'</span>)   </span><br><span class="line">ex1.ages.push(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ex1)    <span class="comment">// &#123; ages: [2, 3, 4],  name: "name1" &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(ex2)   <span class="comment">// &#123; ages: [2, 3],  name: "name2" &#125;</span></span><br><span class="line">ex1.getName()      <span class="comment">// name1</span></span><br></pre></td></tr></table></figure>
+<p>ES6 Class的写法见下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">  &#125;</span><br><span class="line">  getName() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)  </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Parent</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;</span><br><span class="line">    <span class="keyword">super</span>(name)               <span class="comment">// super关键字作用: 调用继承 父类的实例属性/方法</span></span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">20</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  playgame()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Men like playing games'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -457,7 +453,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/instanceof/" rel="tag"><i class="fa fa-tag"></i> instanceof</a>
+            <a href="/tags/对象继承/" rel="tag"><i class="fa fa-tag"></i> 对象继承</a>
           
         </div>
       
@@ -470,8 +466,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/10/面向对象之 new模拟实现/" rel="next" title="面向对象之 new的模拟实现">
-                <i class="fa fa-chevron-left"></i> 面向对象之 new的模拟实现
+              <a href="/2019/11/10/ES6之 迭代器 + 生成器详解/" rel="next" title="ES6之 迭代器 + 生成器 详解">
+                <i class="fa fa-chevron-left"></i> ES6之 迭代器 + 生成器 详解
               </a>
             
           </div>
@@ -480,8 +476,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/10/ES6之 var+let+const详解/" rel="prev" title="ES6之 var + let + const详解">
-                ES6之 var + let + const详解 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/11/12/类型判断之 类型判断方法/" rel="prev" title="类型判断之 类型判断方法">
+                类型判断之 类型判断方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -626,7 +622,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象之-instanceof模拟实现"><span class="nav-number">1.</span> <span class="nav-text">面向对象之 instanceof模拟实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-预读文档"><span class="nav-number">1.1.</span> <span class="nav-text">1 预读文档 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-instanceof-本质-和-实现"><span class="nav-number">1.2.</span> <span class="nav-text"> 2 instanceof 本质 和 实现 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-instanceof-再次理解原型链"><span class="nav-number">1.3.</span> <span class="nav-text"> 3 instanceof 再次理解原型链 </span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象之-对象继承方式"><span class="nav-number">1.</span> <span class="nav-text">面向对象之 对象继承方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-预读文档"><span class="nav-number">1.1.</span> <span class="nav-text">1 预读文档 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-继承方法实现"><span class="nav-number">1.2.</span> <span class="nav-text"> 2 继承方法实现 </span></a></li></ol></li></ol></div>
             
 
           </div>
