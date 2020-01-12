@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="JS 原型,">
+  <meta name="keywords" content="柯里化 函数式编程,">
 
 
 
@@ -90,20 +90,18 @@
 
 
 
-<meta name="description" content="本文是对 原型和原型链的相关知识小结。">
-<meta name="keywords" content="JS 原型">
+<meta name="description" content="本文介绍了函数柯里化的 相关知识点。">
+<meta name="keywords" content="柯里化 函数式编程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面向对象之 原型与原型链">
-<meta property="og:url" content="http://yoursite.com/2019/07/14/面向对象之原型与原型链/index.html">
+<meta property="og:title" content="函数式编程之 柯里化">
+<meta property="og:url" content="http://yoursite.com/2020/01/12/函数式编程之 柯里化/index.html">
 <meta property="og:site_name" content="Ygm的博客">
-<meta property="og:description" content="本文是对 原型和原型链的相关知识小结。">
+<meta property="og:description" content="本文介绍了函数柯里化的 相关知识点。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s1.ax1x.com/2018/06/21/PSHSEj.jpg">
-<meta property="og:updated_time" content="2019-07-14T08:12:57.345Z">
+<meta property="og:updated_time" content="2020-01-12T08:41:53.805Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面向对象之 原型与原型链">
-<meta name="twitter:description" content="本文是对 原型和原型链的相关知识小结。">
-<meta name="twitter:image" content="https://s1.ax1x.com/2018/06/21/PSHSEj.jpg">
+<meta name="twitter:title" content="函数式编程之 柯里化">
+<meta name="twitter:description" content="本文介绍了函数柯里化的 相关知识点。">
 
 
 
@@ -133,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/14/面向对象之原型与原型链/">
+  <link rel="canonical" href="http://yoursite.com/2020/01/12/函数式编程之 柯里化/">
 
 
 
 
 
-  <title>面向对象之 原型与原型链 | Ygm的博客</title>
+  <title>函数式编程之 柯里化 | Ygm的博客</title>
   
 
 
@@ -299,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/14/面向对象之原型与原型链/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/12/函数式编程之 柯里化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ygm">
@@ -316,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">面向对象之 原型与原型链</h1>
+          <h1 class="post-title" itemprop="name headline">函数式编程之 柯里化</h1>
         
 
         <div class="post-meta">
@@ -328,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-14T16:09:04+08:00">
-                2019-07-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-12T16:39:46+08:00">
+                2020-01-12
               </time>
             
 
@@ -351,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS-原型/" itemprop="url" rel="index">
-                    <span itemprop="name">JS 原型</span>
+                  <a href="/categories/柯里化-函数式编程/" itemprop="url" rel="index">
+                    <span itemprop="name">柯里化 函数式编程</span>
                   </a>
                 </span>
 
@@ -382,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  852
+                  414
                 </span>
               
 
@@ -398,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  1
                 </span>
               
             </div>
@@ -419,61 +417,29 @@
       
 
       
-        <p>本文是对 原型和原型链的相关知识小结。<br><a id="more"></a></p>
-<h1 id="面向对象之-原型与原型链"><a href="#面向对象之-原型与原型链" class="headerlink" title="面向对象之 原型与原型链"></a>面向对象之 原型与原型链</h1><p>目录:</p>
-<p>1 <a href="#1">预读文档</a></p>
-<p>2 <a href="#2">原型</a> </p>
-<p>3 <a href="#3">原型链</a></p>
-<p>4 <a href="#4">函数和对象 的创建过程</a></p>
-<h2 id="1-预读文档"><a href="#1-预读文档" class="headerlink" title=" 1 预读文档 "></a><span id="1"> 1 预读文档 </span></h2><p>1 <a href="https://github.com/mqyqingfeng/Blog/issues/2" target="_blank" rel="noopener">JS深入之 从原型到原型链</a></p>
-<p>阅读原因: 原型和原型链概念的最佳介绍博文</p>
-<p>2 <a href="https://www.zhihu.com/question/35442532" target="_blank" rel="noopener">JS中先有Object还是先有Function</a></p>
-<p>阅读原因: 关于Object和Function的关系介绍</p>
-<p>3 <a href="https://github.com/KieSun/Dream/issues/2" target="_blank" rel="noopener">深度解析原型中的各个难点</a></p>
-<p>阅读原因: Object和Function的关系很清晰</p>
-<h2 id="2-原型"><a href="#2-原型" class="headerlink" title=" 2 原型 "></a><span id="2"> 2 原型 </span></h2><p>1 Q: 什么是原型</p>
+        <p>本文介绍了函数柯里化的 相关知识点。<br><a id="more"></a></p>
+<h1 id="函数式编程之-柯里化"><a href="#函数式编程之-柯里化" class="headerlink" title="函数式编程之 柯里化"></a>函数式编程之 柯里化</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>1 <a href="#1">预读文档</a></p>
+<p>2 <a href="#2">柯里化实现</a></p>
+<p>3 <a href="#3">柯里化使用场景</a></p>
+<h2 id="一-预读文档"><a href="#一-预读文档" class="headerlink" title="一 预读文档 "></a><span id="1">一 预读文档 </span></h2><p>1 阅读文档有</p>
+<p>1 <a href="https://juejin.im/post/5bf9bb7ff265da616916e816" target="_blank" rel="noopener">三行代码实现 JS柯里化</a></p>
+<p>阅读原因: 第2部分 直接参考</p>
+<p>2 <a href="https://juejin.im/post/5d2299faf265da1bb67a3b65" target="_blank" rel="noopener">彻底弄懂函数柯里化</a></p>
+<p>阅读原因: 第3部分 直接参考 + 扩展阅读 柯里化占位符</p>
+<h2 id="二-柯里化实现"><a href="#二-柯里化实现" class="headerlink" title=" 二 柯里化实现 "></a><span id="2"> 二 柯里化实现 </span></h2><p>1 Q: 什么是函数柯里化</p>
+<p>A: S1 函数柯里化, 是把一个接收多个参数的函数, 转化为 一系列只接受一个参数的函数，并返回对应结果</p>
+<p>S2 即 <code>add(1,2,3 ) 转化为  curriedSum(1)(2)(3)</code></p>
+<p>2 Q: 如何实现 柯里化</p>
 <p>A:</p>
-<p>S1 JS中，每个函数都有一个prototype属性，指向一个对象</p>
-<p>S2 JS中，每个对象都有一个<strong>proto</strong>属性，指向一个对象</p>
-<p>S3.1 我们知道，通过构造函数B，可以创建出实例对象C</p>
-<p>S3.2 构造函数B也是函数，所以当然也有 prototype属性</p>
-<p>S3.3 实例对象C也是对象，所以当然也有 <strong>proto</strong>属性</p>
-<p>S3.4 特殊的是，<code>实例对象.__proto__ = 构造函数.__prototype</code>, 都指向同一个原型对象A</p>
-<p>S4.1 实例对象C可以读取原型对象A上的属性和方法</p>
-<p>S4.2 原型对象A有一个constructor属性，指向其关联的构造函数</p>
-<p>用代码表示为:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;         <span class="comment">// 构造函数: Person</span></span><br><span class="line">  ......</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> Person()     <span class="comment">// 实例对象: person</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person.__proto__ === Person.prototype)                 <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.constructor === Person)               <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.getPrototypeOf方法,可以获得实例对象的 原型对象</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(person) === Person.prototype)   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<p>用一张图表示为: <a href="https://raw.githubusercontent.com/mqyqingfeng/Blog/master/Images/prototype2.png" target="_blank" rel="noopener">实例对象、构造函数、原型对象关系</a></p>
-<h2 id="3-原型链"><a href="#3-原型链" class="headerlink" title=" 3 原型链 "></a><span id="3"> 3 原型链 </span></h2><p>1 Q: 什么是原型链</p>
-<p>A: </p>
-<p>S1.1 每个对象都有一个原型对象，原型对象也有原型对象，一层一层的原型对象就构成了原型链</p>
-<p>S1.2 原型链的顶层对象是Object.prototype, 再往上则: <code>Object.prototype.__proto__ 为 null</code></p>
-<p>S1.3 通过原型链，可以实现属性的共享和继承</p>
-<p>S2 原型链的属性查找机制:</p>
-<p>会依次在 实例对象-&gt; 原型对象A-&gt; A.__proto_对象-&gt;  …..-&gt; Object.prototype中查找属性</p>
-<p>S3 原型链的属性修改机制:</p>
-<p>只会修改实例对象 本身的属性，如果不存在，则添加该属性</p>
-<p>蓝色部分表示为: <a href="https://raw.githubusercontent.com/mqyqingfeng/Blog/master/Images/prototype5.png" target="_blank" rel="noopener">原型链</a></p>
-<h2 id="4-函数和对象-的创建过程"><a href="#4-函数和对象-的创建过程" class="headerlink" title=" 4 函数和对象 的创建过程 "></a><span id="4"> 4 函数和对象 的创建过程 </span></h2><p>1 <code>Object.prototype</code></p>
-<p>S1 浏览器内置就实现的 key-value对象，它是一个对象 + 对象都有<strong>proto</strong>属性</p>
-<p>S2 ES规定了: <code>Object.prototype.__proto = null</code></p>
-<p>2 <code>Function.prototype</code></p>
-<p>S1 浏览器内置就实现的 key-value</p>
-<p>S2 规定了: <code>Function.prototype.__proto__ = Object.prototype</code></p>
-<p>3 <code>Function构造函数</code></p>
-<p>S1 构造函数对象 具有 <strong>proto</strong>属性 + prototype属性</p>
-<p>S2 规定了: <code>Function.__proto__ = Function.prototype</code>，就只是这么规定的</p>
-<p>S3 <code>Function.prototype = Function.prototype</code></p>
-<p>4 <code>Object构造函数</code></p>
-<p>S1 构造函数对象 具有 <strong>proto</strong>属性 + prototype属性</p>
-<p>S2 Object构造函数 是由Function构造出的实例对象，所以 <code>Object.__proto__ = Function.prototype</code></p>
-<p>S3 <code>Object.prototype = Object.prototype</code></p>
-<p>5 <code>自定义函数的 实例对象</code></p>
-<p>S1 实例对象fn是由 自定义构造函数Fn构造出的，所以 <code>fn.__proto__ = Fn.prototype</code></p>
-<p>S2 自定义构造函数Fn 是由 Function构造的实例，所以 <code>Fn.__proto__ = Function.prototype</code> ，且<code>Fn.prototype = Fn.prototype</code></p>
-<p>S3 Fn.prototype是一个对象，它是由Object构造出的实例，所以 <code>Fn.prototype.__proto__ = Object.prototype</code></p>
-<p>综合上面所有内容，一张经典图理解为:<br><img src="https://s1.ax1x.com/2018/06/21/PSHSEj.jpg" alt="PSHSEj.jpg"></p>
-
+<p>S1 接收一个函数A作为参数, 返回一个新的函数B</p>
+<p>S2 判断A的形参个数fn.length: ≤1时执行函数A + ≥2时把当前的参数存到一个数组args里</p>
+<p>S3.1 当fn.length === agrs.length时, 说明所有参数已经获取完成,此时执行函数A功能</p>
+<p>S3.2 当fn.length !== args.length时, 获取最新参数加入到args中 + 递归判断执行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Curry</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (fn.length &lt;= <span class="number">1</span>) <span class="keyword">return</span> fn</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> Curring = <span class="function">(<span class="params">args</span>) =&gt;</span></span><br><span class="line">    (args.length === fn.length ?</span><br><span class="line">      fn(...args) :</span><br><span class="line">      (arg) =&gt; Curring([...args, arg]))</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> Curring([])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用示例</span></span><br><span class="line"><span class="keyword">const</span> sum = <span class="function">(<span class="params">a, b, c, d</span>) =&gt;</span> a + b + c + d</span><br><span class="line"><span class="keyword">const</span> curriedSum = Curry(sum)</span><br><span class="line"><span class="keyword">const</span> res = curriedSum(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">console</span>.log(res)  <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<h2 id="三-柯里化使用场景"><a href="#三-柯里化使用场景" class="headerlink" title=" 三 柯里化使用场景 "></a><span id="3"> 三 柯里化使用场景 </span></h2><p>1 Q: 柯里化实际的应用场景有哪些</p>
+<p>A:</p>
+<p>S1 参数复用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = [&#123;<span class="attr">name</span>: <span class="string">'kevin'</span>&#125;, &#123;<span class="attr">name</span>: <span class="string">'daisy'</span>&#125;]</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> prop = curry(<span class="function"><span class="keyword">function</span> (<span class="params">key, obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> obj[key]</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> name = person.map(prop(<span class="string">'name'</span>))</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -490,7 +456,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JS-原型/" rel="tag"><i class="fa fa-tag"></i> JS 原型</a>
+            <a href="/tags/柯里化-函数式编程/" rel="tag"><i class="fa fa-tag"></i> 柯里化 函数式编程</a>
           
         </div>
       
@@ -503,8 +469,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/21/hexo博客搭建/" rel="next" title="hexo博客搭建">
-                <i class="fa fa-chevron-left"></i> hexo博客搭建
+              <a href="/2019/12/08/ES6之 生成器详解/" rel="next" title="ES6之 生成器详解">
+                <i class="fa fa-chevron-left"></i> ES6之 生成器详解
               </a>
             
           </div>
@@ -512,10 +478,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/21/作用域之从执行上下文到闭包/" rel="prev" title="作用域之 从执行上下文到闭包">
-                作用域之 从执行上下文到闭包 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -659,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象之-原型与原型链"><span class="nav-number">1.</span> <span class="nav-text">面向对象之 原型与原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-预读文档"><span class="nav-number">1.1.</span> <span class="nav-text"> 1 预读文档 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-原型"><span class="nav-number">1.2.</span> <span class="nav-text"> 2 原型 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-原型链"><span class="nav-number">1.3.</span> <span class="nav-text"> 3 原型链 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-函数和对象-的创建过程"><span class="nav-number">1.4.</span> <span class="nav-text"> 4 函数和对象 的创建过程 </span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数式编程之-柯里化"><span class="nav-number">1.</span> <span class="nav-text">函数式编程之 柯里化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">1.1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-预读文档"><span class="nav-number">1.2.</span> <span class="nav-text">一 预读文档 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-柯里化实现"><span class="nav-number">1.3.</span> <span class="nav-text"> 二 柯里化实现 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-柯里化使用场景"><span class="nav-number">1.4.</span> <span class="nav-text"> 三 柯里化使用场景 </span></a></li></ol></li></ol></div>
             
 
           </div>
