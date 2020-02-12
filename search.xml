@@ -3,7 +3,24 @@
   <entry>
     <title><![CDATA[网络之HTTPS详解]]></title>
     <url>%2F2020%2F02%2F12%2F%E7%BD%91%E7%BB%9C%E4%B9%8BHTTPS%E8%AF%A6%E8%A7%A3%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[本文介绍了HTTPS 相关知识点。 目录 1 预读文档 2 HTTPS的作用 3 HTTPS的 建立过程 一 预读文档 1 HTTPS原理 阅读原因: 入门讲解视频 1 深入理解HTTPS工作原理 阅读原因: 第2部分 直接参考文档 + HTTPS的原理介绍 2 看图学HTTPS 阅读原因: 第3部分 直接参考文档 + HTTPS的原理介绍 二 HTTPS的作用 1 Q: 为什么要引入HTTPS A: 由于HTTP有以下 安全问题，所以引入HTTPS解决这些问题: S1 HTTP采用明文通信, 数据容易被窃听; S2 HTTP不会检测数据传输的完整性, 所以数据容易被 篡改; S3 HTTP没有任何身份验证, 所以有可能被 中间人身份伪造; HTTPS在 TCP 和 HTTP层之间, 新增了 SSL/TLS安全层, 用来保证HTTP通话过程中的 信息安全和身份认证。 2 Q: HTTPS 和 HTTP的区别 A: S1 默认连接的 端口不同: HTTP的默认连接端口是80, HTTPS的默认连接端口是443; S2 需要的证书不同: HTTPS需要用到SSL证书，而HTTP不用; S3 安全性不同: HTTP采用明文传输, 而HTTPS 采用SSL加密传输; S4 HTTPS 对搜索引擎更友好 三 HTTPS的 建立过程 1 Q: HTTPS的原理是什么 A: 实现原理是: 对称加密(如AES) + 非对称加密(如RSA) + 散列算法(如SHA) + CA第3方认证 具体含义, 可参考 预读文档1 和 预读文档2 2 Q: HTTPS的建立过程是什么 A: S1 客户端A 请求建立SSL连接，并向服务端B 发送一个随机数1 和 客户端支持的 非对称加密方法; S2 服务端B 选择客户端支持的一种加密算法 =&gt; 生成另一个随机数2 + 将 数字证书(其中包含 服务器公钥P1) 发给客户端A; S3 A进行证书验证，验证通过=&gt; 生成一个新的随机数3 + 通过P1公钥及加密方法进行加密，发送给B; S4 B 用 私钥 P’1 进行解密, 获取到随机数3 =&gt; 利用随机数1,2,3生成 对称加密key- session key; 以上也是 SSL层的 4次握手过程 再补充说明一下 数字证书验证的具体细节(数字证书用来解决 身份验证和 数据完整性验证) S1 数字证书包括: 网站明文信息 + 服务器公钥P1 + 数字签名(明文信息+散列算法(如Hash)——&gt; 消息摘要D + CA的私钥P2&#39;——&gt; 数字签名) S2.1 客户端获取到数字证书后, 会使用内置在 操作系统中的 CA公钥P2 解密数字签名, 从而获取到 消息摘要D; S2.2 客户端利用 网站明文信息 + 散列算法——&gt; 生成消息摘要D2; S2.3 比较 D 和 D2的值, 如果一致则 验证通过; S3 数字签名的作用，验证了传输来的 服务器端公钥P1的 真实性, 数字签名验证机制 解决了 中间人身份伪造的问题]]></content>
+      <categories>
+        <category>HTTPS</category>
+      </categories>
+      <tags>
+        <tag>HTTPS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ES6之 迭代器详解]]></title>
+    <url>%2F2020%2F02%2F08%2FES6%E4%B9%8B%20Iterator%E8%AF%A6%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[本文介绍了ES6中 Iterator迭代器 相关知识点。 目录: 1 预读文档 2 迭代器 3 for…of实现 1 预读文档 1 深入理解 Es6 Iterator 2 Iterator 和 for…of 循环 阅读原因: 第2部分 直接参考文档 3 ES6 系列之迭代器与 for of 阅读原因: 第3部分 直接参考文档 2 迭代器 1 Q: 什么是迭代器(Iterator), 有什么作用 A: A1 迭代器: 具有next()方法的对象 + next()返回一个 具有value和done属性的 对象 A2 迭代器的作用是: 1. 为不同数据结构 提供统一的 数据访问方式; 2. for循环的语法过于复杂 用代码表示迭代器为: 123456789101112131415161718192021function createIterator(items) &#123; let i = 0 return &#123; next() &#123; let done = (i &gt;= items.length) let value = (done ? undefined : items[i++]) return &#123; value, done &#125; &#125; &#125;&#125;let iterator = createIterator([1, 2, 3])console.log(iterator.next()) // "&#123; value: 1, done: false &#125;"console.log(iterator.next()) // "&#123; value: 2, done: false &#125;"console.log(iterator.next()) // "&#123; value: 3, done: false &#125;"console.log(iterator.next()) // "&#123; value: undefined, done: true &#125;"// 之后的所有调用console.log(iterator.next()) // "&#123; value: undefined, done: true &#125;" 2 Q: 什么是可迭代对象(Iterable), 它有什么特点 A: S1 在JS中, 只要一个对象A部署了[symbol.itetaor]方法 + 该方法返回的是Iterator, 那么对象A就是一个 可迭代对象 S2 可迭代对象的特点是: 可以通过for...of语法 访问其对象的内部数据 示例代码为: 1234567891011121314151617181920212223242526class RangeIterator &#123; constructor(start, stop) &#123; this.value = start; this.stop = stop; &#125; [Symbol.iterator]() &#123; return this; &#125; // new调用时,原型链上this指向实例对象 + 具有next()方法 next() &#123; var value = this.value; if (value &lt; this.stop) &#123; this.value++; return &#123;done: false, value: value&#125;; &#125; return &#123;done: true, value: undefined&#125;; &#125;&#125;function range(start, stop) &#123; return new RangeIterator(start, stop);&#125;for (var value of range(0, 3)) &#123; console.log(value); // 0, 1, 2&#125; 3 Q: 有哪些语法操作会默认调用 迭代器next()方法 A: 解构赋值 / 扩展运算符 / for…of / Array.from() / yield* 等 4 Q: 迭代器对象除了next()方法，还能有哪些方法 A: 还可以有 return()方法 + throw方法 retrun()方法在 遍历迭代器过程中 中止(break) / 报错(throw Error)时, 就会调用return方法 + return方法要返回一个对象 123456789101112131415function readFile(file) &#123; [Symbol.iterator]() &#123; return &#123; next() &#123; return &#123;done: false&#125; &#125; // 迭代器对象的return方法 return() &#123; return &#123;done: true&#125; &#125; &#125; &#125;&#125; 3 for…of实现 1 Q: 模拟实现for…of的过程 A: S1 可迭代对象判断 + 回调函数判断 S2 自动调用 对象的迭代器方法 + 依次执行 next方法 123456789101112131415161718function forOf(obj, cb) &#123; let _iterator, _step if (typeof obj[Symbol.iterator] !== 'function') &#123; throw new TypeError(obj + 'is not iterable') &#125; if (typeof cb !== 'function') &#123; throw new TypeError('cb must be callable') &#125; _iterator = obj[Symbol.iterator]() _step = _iterator.next() while (!_step.done) &#123; cb(_step.value) _step = _iterator.next() &#125;&#125;]]></content>
+      <categories>
+        <category>ES6 Iterator</category>
+      </categories>
+      <tags>
+        <tag>ES6 Iterator</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[网络之 跨域方法]]></title>
