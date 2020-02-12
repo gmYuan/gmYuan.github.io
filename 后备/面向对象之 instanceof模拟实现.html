@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,">
+  <meta name="keywords" content=",,,,,,,,,,">
 
 
 
@@ -90,18 +90,20 @@
 
 
 
-<meta name="description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
-<meta name="keywords" content="Hexo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hexo博客搭建">
-<meta property="og:url" content="http://yoursite.com/2019/04/21/hexo博客搭建/index.html">
+<meta name="description" content="本文模拟实现了 JS里 instanceof关键字的功能。">
+<meta name="keywords" content="instanceof">
+<meta property="og:type" content="website">
+<meta property="og:title" content="面向对象之 instanceof模拟实现">
+<meta property="og:url" content="http://yoursite.com/后备/面向对象之 instanceof模拟实现.html">
 <meta property="og:site_name" content="Ygm的博客">
-<meta property="og:description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
+<meta property="og:description" content="本文模拟实现了 JS里 instanceof关键字的功能。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-21T13:45:15.788Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/7/14/16bef984f537cf1f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:updated_time" content="2019-11-10T07:40:49.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo博客搭建">
-<meta name="twitter:description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
+<meta name="twitter:title" content="面向对象之 instanceof模拟实现">
+<meta name="twitter:description" content="本文模拟实现了 JS里 instanceof关键字的功能。">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/7/14/16bef984f537cf1f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
 
 
 
@@ -131,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/21/hexo博客搭建/">
+  <link rel="canonical" href="http://yoursite.com/后备/面向对象之 instanceof模拟实现.html">
 
 
 
 
 
-  <title>hexo博客搭建 | Ygm的博客</title>
+  <title>面向对象之 instanceof模拟实现 | Ygm的博客</title>
   
 
 
@@ -285,208 +287,54 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/hexo博客搭建/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ygm">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ygm的博客">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">hexo博客搭建</h1>
-        
+	<h1 class="post-title" itemprop="name headline">面向对象之 instanceof模拟实现</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T16:54:58+08:00">
-                2019-04-21
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  202
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p>这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。</p>
-<p>因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。<br><a id="more"></a></p>
-<h2 id="一-博客搭建过程"><a href="#一-博客搭建过程" class="headerlink" title="一 博客搭建过程"></a>一 博客搭建过程</h2><p>1 Q: 如何搭建博客</p>
-<p>S1 实现基本博客功能，参考这个文档即可: <a href="http://fangzh.top/2018/2018090514/" target="_blank" rel="noopener">hexo教程：github page+独立域名搭建(1)</a></p>
-<p>S2 配置博客主题，依次参考以下文档:</p>
-<p><a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">01 hexo的next主题个性化配置教程</a></p>
-<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">02 next官方文档</a></p>
-<p><a href="https://www.zydarchen.top/20170707/4_hello_blog" target="_blank" rel="noopener">03 底部文字居中</a></p>
-<p><a href="https://www.zhyong.cn/posts/ca02/" target="_blank" rel="noopener">04 代码块复制功能</a></p>
-<p>S3 利用git分支进行多终端工作，具体可见:</p>
-<p><a href="http://fangzh.top/2018/2018090715/" target="_blank" rel="noopener">hexo教程:基本配置+更换主题+多终端工作+coding page部署分流(2)</a></p>
-<p>S4 发布步骤,代码见下:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo s --debug</span><br><span class="line"></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+      <div class="post-body">
+        
+        
+          <p>本文模拟实现了 JS里 instanceof关键字的功能。<br><a id="more"></a></p>
+<h1 id="面向对象之-instanceof模拟实现"><a href="#面向对象之-instanceof模拟实现" class="headerlink" title="面向对象之 instanceof模拟实现"></a>面向对象之 instanceof模拟实现</h1><p>目录:</p>
+<p>1 <a href="#1">预读文档</a></p>
+<p>2 <a href="#2">instanceof 本质和实现</a></p>
+<p>3 <a href="#3">instanceof 再次理解原型链</a></p>
+<h2 id="1-预读文档"><a href="#1-预读文档" class="headerlink" title="1 预读文档 "></a><span id="1">1 预读文档 </span></h2><p>1 <a href="https://juejin.im/post/5cb3e7e0e51d456e896349d3" target="_blank" rel="noopener">instanceof原理</a></p>
+<p>2 <a href="https://juejin.im/post/5d2addffe51d455c8838e208" target="_blank" rel="noopener">关于instanceof和原型链</a></p>
+<p>阅读原因: 直接参考文档</p>
+<h2 id="2-instanceof-本质-和-实现"><a href="#2-instanceof-本质-和-实现" class="headerlink" title=" 2 instanceof 本质 和 实现 "></a><span id="2"> 2 instanceof 本质 和 实现 </span></h2><p>1 Q: instanceof的实现原理是什么</p>
+<p>A:</p>
+<p>S1 instaceof的实现原理，是递归查找原型链的过程</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj1 <span class="keyword">instanceof</span> Fn</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不断查找obj.__proto__.__proto__......, 只有其中有一环指向Fn.prototype, 则为true</span></span><br></pre></td></tr></table></figure>
+<p>2 Q: 手写出instanceof的实现代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mockInstanceof = <span class="function"><span class="keyword">function</span>(<span class="params">left, right</span>) </span>&#123;  <span class="comment">// left表示左侧对象(实例)，right表示右侧函数对象参数</span></span><br><span class="line">  <span class="keyword">let</span> src = left.__proto__</span><br><span class="line">  <span class="keyword">let</span> target = right.prototype</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (src === <span class="literal">null</span>) &#123;     <span class="comment">// 原型链对象遍历到顶层时</span></span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span> </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (src === target) &#123;   <span class="comment">// 与显式对象严格相等时</span></span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    src = src.__proto__      <span class="comment">// 递归遍历原型链</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-instanceof-再次理解原型链"><a href="#3-instanceof-再次理解原型链" class="headerlink" title=" 3 instanceof 再次理解原型链 "></a><span id="3"> 3 instanceof 再次理解原型链 </span></h2><p>1 Q: 原型链的递归值分别是哪些, 或者说，原型链的完整流程是什么</p>
+<p>A: 3句话来理解下图即可</p>
+<p>S1 (实例)对象 都有<strong>proto</strong>属性</p>
+<p>S2 构造函数对象 同时具有 <strong>proto</strong>属性 和 prototype属性</p>
+<p>S3 <strong>proto</strong>可以近似理解为 父子关系</p>
+<p>最后以一张经典图结束</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/7/14/16bef984f537cf1f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="原型链经典图"></p>
+
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/04/ES6之 Promise详解/" rel="prev" title="ES6之 Promise详解">
-                ES6之 Promise详解 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -611,7 +459,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-博客搭建过程"><span class="nav-number">1.</span> <span class="nav-text">一 博客搭建过程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象之-instanceof模拟实现"><span class="nav-number">1.</span> <span class="nav-text">面向对象之 instanceof模拟实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-预读文档"><span class="nav-number">1.1.</span> <span class="nav-text">1 预读文档 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-instanceof-本质-和-实现"><span class="nav-number">1.2.</span> <span class="nav-text"> 2 instanceof 本质 和 实现 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-instanceof-再次理解原型链"><span class="nav-number">1.3.</span> <span class="nav-text"> 3 instanceof 再次理解原型链 </span></a></li></ol></li></ol></div>
             
 
           </div>

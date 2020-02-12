@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,">
+  <meta name="keywords" content="跨域方法,">
 
 
 
@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
-<meta name="keywords" content="Hexo">
+<meta name="description" content="前言本文实现了常见的  跨域方法。">
+<meta name="keywords" content="跨域方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo博客搭建">
-<meta property="og:url" content="http://yoursite.com/2019/04/21/hexo博客搭建/index.html">
+<meta property="og:title" content="网络之 跨域方法">
+<meta property="og:url" content="http://yoursite.com/2020/02/06/网络之 跨域方法/index.html">
 <meta property="og:site_name" content="Ygm的博客">
-<meta property="og:description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
+<meta property="og:description" content="前言本文实现了常见的  跨域方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-21T13:45:15.788Z">
+<meta property="og:updated_time" content="2020-02-12T09:33:01.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo博客搭建">
-<meta name="twitter:description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
+<meta name="twitter:title" content="网络之 跨域方法">
+<meta name="twitter:description" content="前言本文实现了常见的  跨域方法。">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/21/hexo博客搭建/">
+  <link rel="canonical" href="http://yoursite.com/2020/02/06/网络之 跨域方法/">
 
 
 
 
 
-  <title>hexo博客搭建 | Ygm的博客</title>
+  <title>网络之 跨域方法 | Ygm的博客</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/hexo博客搭建/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/06/网络之 跨域方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ygm">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo博客搭建</h1>
+          <h1 class="post-title" itemprop="name headline">网络之 跨域方法</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T16:54:58+08:00">
-                2019-04-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-06T21:20:29+08:00">
+                2020-02-06
               </time>
             
 
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/跨域方法/" itemprop="url" rel="index">
+                    <span itemprop="name">跨域方法</span>
                   </a>
                 </span>
 
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  202
+                  1.2k
                 </span>
               
 
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -417,19 +417,55 @@
       
 
       
-        <p>这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。</p>
-<p>因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。<br><a id="more"></a></p>
-<h2 id="一-博客搭建过程"><a href="#一-博客搭建过程" class="headerlink" title="一 博客搭建过程"></a>一 博客搭建过程</h2><p>1 Q: 如何搭建博客</p>
-<p>S1 实现基本博客功能，参考这个文档即可: <a href="http://fangzh.top/2018/2018090514/" target="_blank" rel="noopener">hexo教程：github page+独立域名搭建(1)</a></p>
-<p>S2 配置博客主题，依次参考以下文档:</p>
-<p><a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">01 hexo的next主题个性化配置教程</a></p>
-<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">02 next官方文档</a></p>
-<p><a href="https://www.zydarchen.top/20170707/4_hello_blog" target="_blank" rel="noopener">03 底部文字居中</a></p>
-<p><a href="https://www.zhyong.cn/posts/ca02/" target="_blank" rel="noopener">04 代码块复制功能</a></p>
-<p>S3 利用git分支进行多终端工作，具体可见:</p>
-<p><a href="http://fangzh.top/2018/2018090715/" target="_blank" rel="noopener">hexo教程:基本配置+更换主题+多终端工作+coding page部署分流(2)</a></p>
-<p>S4 发布步骤,代码见下:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo s --debug</span><br><span class="line"></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文实现了常见的  跨域方法。<br><a id="more"></a></p>
+<p>目录:</p>
+<p>1 <a href="#1">预读文档</a></p>
+<p>2 <a href="#2">为什么要进行跨域</a></p>
+<p>3 <a href="#3">跨域常用方法</a></p>
+<h2 id="一-预读文档"><a href="#一-预读文档" class="headerlink" title="一 预读文档 "></a><span id="1">一 预读文档 </span></h2><p>1 <a href="https://juejin.im/post/5dc9228cf265da4d2125de8d#heading-0" target="_blank" rel="noopener">可能是最好的跨域解决方案</a></p>
+<p>阅读原因: 同源策略直接参考文档</p>
+<p>2 <a href="https://juejin.im/post/5c23993de51d457b8c1f4ee1" target="_blank" rel="noopener">九种跨域方式实现原理</a></p>
+<p>阅读原因: JSONP/ CORS部分/Nginx反向代理/postMessage/websocket 直接参考文档</p>
+<p>3 <a href="https://juejin.im/post/5c0a55e76fb9a049ef2665ba" target="_blank" rel="noopener">跨域要不要了解下 CORS 基础篇</a></p>
+<p>阅读原因:  CORS部分 直接参考文档2</p>
+<p>4 <a href="https://juejin.im/post/5a2f92c65188253e2470f16d#heading-19" target="_blank" rel="noopener">正确面对跨域，别慌</a></p>
+<p>阅读原因:  Node中间件代理部分 直接参考文档</p>
+<p>5 <a href="https://juejin.im/post/5a6320d56fb9a01cb64ee191" target="_blank" rel="noopener">我知道的跨域与安全</a></p>
+<p>阅读原因: 与安全相关部分, 待读…</p>
+<h2 id="二-为什么要进行跨域"><a href="#二-为什么要进行跨域" class="headerlink" title="二 为什么要进行跨域 "></a><span id="2">二 为什么要进行跨域 </span></h2><p>1 Q: 为什么要进行跨域</p>
+<p>A: S1 由于浏览器的同源策略</p>
+<p>S2 所谓同源策略，是指 浏览器规定, 请求源A和响应源B之间的 协议、域名、端口号必须完全一致，才可以进行正常通信;</p>
+<p>如果请求A和响应B 之间 不同源,浏览器就会有以下 安全限制:</p>
+<p>A1 A无法读取B的 存储性内容：如 cookie/localStorage/IndexDB</p>
+<p>A2 A无法获取到B 的DOM节点</p>
+<p>A3 B返回的AJAX请求响应会被 A的浏览器拦截</p>
+<h2 id="三-跨域常用方法"><a href="#三-跨域常用方法" class="headerlink" title=" 三 跨域常用方法 "></a><span id="3"> 三 跨域常用方法 </span></h2><p>1 Q: 如何实现跨域</p>
+<p>方法1: JSONP</p>
+<p>S1 原理是: script/img等 静态资源文件请求没有 同源策略限制 + 请求返回的响应是 合法的JS语句 + script标签内的JS语句会自动执行</p>
+<p>S2 JSONP的优点: 简单, 兼容性好</p>
+<p>S3 JSONP的缺点: 只支持get请求 + 需要前后端配合实现 + 存在安全性问题</p>
+<p>前端部分的 具体实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用</span></span><br><span class="line">jsonp(&#123;</span><br><span class="line">  url: <span class="string">'http://localhost:3000/say'</span>,</span><br><span class="line">  params: &#123; <span class="attr">wd</span>: <span class="string">'Iloveyou'</span> &#125;,</span><br><span class="line">  callback: <span class="string">'show'</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">&#123; url, params, callback &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    params = &#123;...params, callback&#125;</span><br><span class="line">    <span class="keyword">let</span> arr = []</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> params) &#123;</span><br><span class="line">      arr.push(<span class="string">`<span class="subst">$&#123;key&#125;</span>=<span class="subst">$&#123;params[key]&#125;</span>`</span>)   <span class="comment">// S2 [wd=b, callback=show]</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)   <span class="comment">//S1 创建一个&lt;script&gt;标签，src为跨域地址</span></span><br><span class="line">    script.src = <span class="string">`<span class="subst">$&#123;url&#125;</span>?<span class="subst">$&#123;arr.join(<span class="string">'&amp;'</span>)&#125;</span>`</span>  <span class="comment">// S3 ?wd=b&amp;callback=show</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(script)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">window</span>[callback] = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;     <span class="comment">//S4  A执行 之前声明的回调函数，对返回的数据进行操作</span></span><br><span class="line">      resolve(data)</span><br><span class="line">      <span class="built_in">document</span>.body.removeChild(script)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>方法2: CORS (跨域资源共享)</p>
+<p>S1 CORS主要是由 服务器端设置一系列响应头，来解决跨域限制</p>
+<p>S2 需要设置的响应头,主要有以下几种:</p>
+<p><code>Access-Control-Allow-Origin</code>: 设置 允许的 跨域源</p>
+<p><code>Access-Control-Allow-Headers</code>: 设置 允许的 跨域请求头</p>
+<p><code>Access-Control-Allow-Methods</code>: 设置 允许的 跨域请求方法</p>
+<p><code>Access-Control-Allow-Credentials</code>: 设置 是否允许携带cookie, 如果要携带cookie, 也需要请求端设置<code>xhr.withCredentials = true</code></p>
+<p><code>Access-Control-Max-Age</code>: 设置 预检请求的存活时间</p>
+<p>S3 预检请求和 请求分类有关。 请求分为 简单请求和复杂请求;</p>
+<p>简单请求: 请求方法为get/post/head + contnet-type值为以下3种之一: application/x-www-urlencoded &amp; multipart/form-data &amp; text/plain</p>
+<p>在发送复杂请求前, 浏览器会先发送一个方法为OPTION的预检请求, 以向服务器确定相关跨域信息。</p>
+<p>方法3: Node中间件代理(正向代理)</p>
+<p>S1 原理是: A向 代理服务器B发送请求 + B向目标服务器C转发请求 + 服务器B和C之间无 同源限制</p>
+<p>方法4: nginx反向代理</p>
+<p>S1 原理是: A向 代理服务器B发送请求 + B向任意某个服务器C转发请求(负载均衡)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  # 监听80端口号</span><br><span class="line">  listen 80;</span><br><span class="line"></span><br><span class="line">  # 监听访问的域名</span><br><span class="line">  server_name www.domain1.com;</span><br><span class="line"></span><br><span class="line">  # 根据访问路径配置</span><br><span class="line">  location / &#123;</span><br><span class="line">    # 反向代理</span><br><span class="line">    proxy_pass   http://www.domain2.com:8080;</span><br><span class="line"></span><br><span class="line">    # 修改cookie里域名</span><br><span class="line">    proxy_cookie_domain  www.domain2.com  www.domain1.com;</span><br><span class="line"></span><br><span class="line">    # 当用webpack-dev-server等中间件代理接口访问nignx时，此时无浏览器参与，故没有同源限制，下面的跨域配置可不启用</span><br><span class="line"></span><br><span class="line">    # 当前端只跨域不带cookie时，可为*</span><br><span class="line">    add_header Access-Control-Allow-Origin  http://www.domain1.com;  </span><br><span class="line"></span><br><span class="line">    add_header Access-Control-Allow-Credentials  true;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>方法5: postMessage</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//发送数据</span></span><br><span class="line">iframe.contentWindow.postMessage(<span class="string">'A to B'</span>, <span class="string">'http://b.com:4000'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//接受返回数据</span></span><br><span class="line"><span class="built_in">window</span>.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.data)   <span class="comment">// B back to A</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// b</span></span><br><span class="line"><span class="built_in">window</span>.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.data)   <span class="comment">// A to B</span></span><br><span class="line"></span><br><span class="line">  e.source.postMessage(<span class="string">'B back to A'</span>, e.origin)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>方法6: websocket</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  </span><br><span class="line"><span class="comment">// socket.html  </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> socket = <span class="keyword">new</span> WebSocket(<span class="string">'ws://b.com:4000'</span>)</span><br><span class="line"></span><br><span class="line">socket.onopen = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  socket.send(<span class="string">'A to B'</span>);      <span class="comment">//向服务器发送数据</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">socket.onmessage = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.data);      <span class="comment">//接收服务器返回的数据</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// server.js</span></span><br><span class="line"><span class="keyword">let</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">let</span> app = express();</span><br><span class="line"><span class="keyword">let</span> WebSocket = <span class="built_in">require</span>(<span class="string">'ws'</span>);  <span class="comment">//安装ws</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> wss = <span class="keyword">new</span> WebSocket.Server( &#123;<span class="attr">port</span>:<span class="number">3000</span>&#125; );</span><br><span class="line"></span><br><span class="line">wss.on(<span class="string">'connection'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">ws</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// B 向 A 返回信息</span></span><br><span class="line">  ws.on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">    ws.send(<span class="string">'B back to A'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -446,7 +482,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+            <a href="/tags/跨域方法/" rel="tag"><i class="fa fa-tag"></i> 跨域方法</a>
           
         </div>
       
@@ -459,14 +495,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/02/04/ES6之 Promise详解/" rel="next" title="ES6之 Promise详解">
+                <i class="fa fa-chevron-left"></i> ES6之 Promise详解
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/02/04/ES6之 Promise详解/" rel="prev" title="ES6之 Promise详解">
-                ES6之 Promise详解 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/02/12/网络之HTTPS详解/" rel="prev" title="网络之HTTPS详解">
+                网络之HTTPS详解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -611,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-博客搭建过程"><span class="nav-number">1.</span> <span class="nav-text">一 博客搭建过程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-预读文档"><span class="nav-number">2.</span> <span class="nav-text">一 预读文档 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-为什么要进行跨域"><span class="nav-number">3.</span> <span class="nav-text">二 为什么要进行跨域 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-跨域常用方法"><span class="nav-number">4.</span> <span class="nav-text"> 三 跨域常用方法 </span></a></li></ol></div>
             
 
           </div>

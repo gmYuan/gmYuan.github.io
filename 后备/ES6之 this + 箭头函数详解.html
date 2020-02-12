@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,">
+  <meta name="keywords" content=",,,,,,,,,">
 
 
 
@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
-<meta name="keywords" content="Hexo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hexo博客搭建">
-<meta property="og:url" content="http://yoursite.com/2019/04/21/hexo博客搭建/index.html">
+<meta name="description" content="本文介绍了ES6中 this和箭头函数 相关知识点。">
+<meta name="keywords" content="this 箭头函数">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ES6之 this + 箭头函数详解">
+<meta property="og:url" content="http://yoursite.com/后备/ES6之 this + 箭头函数详解.html">
 <meta property="og:site_name" content="Ygm的博客">
-<meta property="og:description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
+<meta property="og:description" content="本文介绍了ES6中 this和箭头函数 相关知识点。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-21T13:45:15.788Z">
+<meta property="og:updated_time" content="2019-11-10T09:20:39.362Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo博客搭建">
-<meta name="twitter:description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
+<meta name="twitter:title" content="ES6之 this + 箭头函数详解">
+<meta name="twitter:description" content="本文介绍了ES6中 this和箭头函数 相关知识点。">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/21/hexo博客搭建/">
+  <link rel="canonical" href="http://yoursite.com/后备/ES6之 this + 箭头函数详解.html">
 
 
 
 
 
-  <title>hexo博客搭建 | Ygm的博客</title>
+  <title>ES6之 this + 箭头函数详解 | Ygm的博客</title>
   
 
 
@@ -285,208 +285,88 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/hexo博客搭建/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ygm">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ygm的博客">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">hexo博客搭建</h1>
-        
+	<h1 class="post-title" itemprop="name headline">ES6之 this + 箭头函数详解</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T16:54:58+08:00">
-                2019-04-21
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  202
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p>这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。</p>
-<p>因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。<br><a id="more"></a></p>
-<h2 id="一-博客搭建过程"><a href="#一-博客搭建过程" class="headerlink" title="一 博客搭建过程"></a>一 博客搭建过程</h2><p>1 Q: 如何搭建博客</p>
-<p>S1 实现基本博客功能，参考这个文档即可: <a href="http://fangzh.top/2018/2018090514/" target="_blank" rel="noopener">hexo教程：github page+独立域名搭建(1)</a></p>
-<p>S2 配置博客主题，依次参考以下文档:</p>
-<p><a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">01 hexo的next主题个性化配置教程</a></p>
-<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">02 next官方文档</a></p>
-<p><a href="https://www.zydarchen.top/20170707/4_hello_blog" target="_blank" rel="noopener">03 底部文字居中</a></p>
-<p><a href="https://www.zhyong.cn/posts/ca02/" target="_blank" rel="noopener">04 代码块复制功能</a></p>
-<p>S3 利用git分支进行多终端工作，具体可见:</p>
-<p><a href="http://fangzh.top/2018/2018090715/" target="_blank" rel="noopener">hexo教程:基本配置+更换主题+多终端工作+coding page部署分流(2)</a></p>
-<p>S4 发布步骤,代码见下:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo s --debug</span><br><span class="line"></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+      <div class="post-body">
+        
+        
+          <p>本文介绍了ES6中 this和箭头函数 相关知识点。<br><a id="more"></a></p>
+<h1 id="ES6之-this-箭头函数详解"><a href="#ES6之-this-箭头函数详解" class="headerlink" title="ES6之 this + 箭头函数详解"></a>ES6之 this + 箭头函数详解</h1><p>目录:</p>
+<p>1 <a href="#1">预读文档</a></p>
+<p>2 <a href="#2">什么是this</a> </p>
+<p>3 <a href="#3">为什么要有this</a></p>
+<p>4 <a href="#4">this指向规则</a></p>
+<p>5 <a href="#5">箭头函数其他特点</a></p>
+<h2 id="1-预读文档"><a href="#1-预读文档" class="headerlink" title=" 1 预读文档 "></a><span id="1"> 1 预读文档 </span></h2><p>1 <a href="http://javascript.ruanyifeng.com/oop/this.html" target="_blank" rel="noopener">阮一峰— this关键字</a></p>
+<p>2 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="noopener">MDN— this关键词</a></p>
+<p>3 <a href="https://juejin.im/post/59bfe84351882531b730bac2" target="_blank" rel="noopener">掘金— this、apply、call、bind</a></p>
+<p>阅读原因: 全面介绍了this的相关知识和易错点</p>
+<p>4 <a href="https://github.com/mqyqingfeng/Blog/issues/85" target="_blank" rel="noopener">冴羽—— ES6系列之 箭头函数</a></p>
+<p>5 <a href="https://juejin.im/post/58fda157570c350058e6afb8" target="_blank" rel="noopener">什么时候不能使用箭头函数</a></p>
+<p>阅读原因: 箭头函数相关知识点介绍</p>
+<h2 id="2-什么是this"><a href="#2-什么是this" class="headerlink" title=" 2 什么是this "></a><span id="2"> 2 什么是this </span></h2><p>1 Q: 什么是this</p>
+<p>A: S1 this是函数执行上下文中指向的 一个对象</p>
+<p>S2 不同的函数调用方法，this指向的对象也不同</p>
+<h2 id="3-为什么要有this"><a href="#3-为什么要有this" class="headerlink" title=" 3 为什么要有this "></a><span id="3"> 3 为什么要有this </span></h2><p>1 Q: 为什么要有this</p>
+<p>A: S1 为了实现函数方法的复用, 举例:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">eating</span>(<span class="params"></span>)</span>&#123;            <span class="comment">// 创建一个eating函数,内部使用了this</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' is eating'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// S2.1 有一个人想执行eating()方法，他可以这样实现</span></span><br><span class="line"><span class="keyword">let</span> person1 = &#123;</span><br><span class="line">  name: <span class="string">'klay'</span>,</span><br><span class="line">  age: <span class="number">20</span>,</span><br><span class="line">  eat: eating</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person1.eat()   <span class="comment">// 输出'klay is eating'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// S2.2 如果有另一个人也想执行eating()方法，那么他可以如下实现</span></span><br><span class="line"><span class="keyword">let</span> person2 = &#123;</span><br><span class="line">  name: <span class="string">'teddy'</span>,</span><br><span class="line">  age: <span class="number">21</span>,</span><br><span class="line">  eat: eating</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person2.eat()   <span class="comment">// 输出'teddy is eating'</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-this指向规则"><a href="#4-this指向规则" class="headerlink" title=" 4 this指向规则 "></a><span id="4"> 4 this指向规则 </span></h2><p>1 Q: this指向对象 有哪些常见情况</p>
+<p>A: S1 全局环境 + 非严格模式: this指向 window对象;  全局环境 + 严格模式: this指向 undefined</p>
+<p>这种情况，可以理解成 <code>test.call(undefined)</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.b = <span class="string">'test'</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.b === <span class="built_in">window</span>.b)    <span class="comment">//ture</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">test()   <span class="comment">//window</span></span><br></pre></td></tr></table></figure>
+<p>S2 函数作为对象方法调用: this指向 该对象</p>
+<p>这种情况，可以理解成 <code>obj.getName.call(obj)</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'klay'</span>,</span><br><span class="line">  getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.getName()    <span class="comment">//klay</span></span><br></pre></td></tr></table></figure>
+<p>特殊情况1: 函数作为嵌套对象 内部的方法调用: this指向 内部对象,  可以理解成 <code>obj1.obj2.getName.call(obj2)</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">naming</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  name:<span class="string">'klay'</span>,</span><br><span class="line">  getName: naming,</span><br><span class="line">  obj2:&#123;</span><br><span class="line">    name:<span class="string">'inner'</span>,</span><br><span class="line">    getName: naming</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj1.obj2.getName()    <span class="comment">//inner</span></span><br></pre></td></tr></table></figure>
+<p>特殊情况2: 函数作为数组成员调用: this指向 该数组对象 (因为数组是特殊的对象)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn2,fn3</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [fn1,fn2,fn3]</span><br><span class="line">arr[<span class="number">0</span>]()                 <span class="comment">//arr</span></span><br></pre></td></tr></table></figure>
+<p>特殊情况3: 对象方法赋值给一个函数A，调用函数A时，this指向window</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'outer'</span></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  name:<span class="string">'klay'</span>,</span><br><span class="line">  getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> outer = obj1.getName</span><br><span class="line">outer()                   <span class="comment">//outer</span></span><br></pre></td></tr></table></figure>
+<p>特殊情况4: 对象方法和运算符（布尔/算数/赋值等）一起使用，this对象指向全局对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  foo: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="literal">false</span> || obj.foo)()    <span class="comment">//window</span></span><br><span class="line">(obj.foo, obj.foo)()    <span class="comment">//window</span></span><br><span class="line">(obj.foo = obj.foo)()   <span class="comment">//window</span></span><br></pre></td></tr></table></figure>
+<p>特殊情况5: 对象里的函数A含有函数B，函数B执行时，B内部的this 指向window对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  f1: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">    <span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">    &#125;()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj1.f1()             <span class="comment">//obj1   window</span></span><br></pre></td></tr></table></figure>
+<p>特殊情况6: 回调函数A中 传入的函数B内部使用this, this会被修改成 window对象/DOM元素等</p>
+<p>类似的还有内置函数的回调，如<code>setTimeout()、foreach()、事件监听回调函数</code>等</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'global'</span></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  a:<span class="number">2</span>,</span><br><span class="line">  foo()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doFoo</span>(<span class="params">fn</span>)</span>&#123;</span><br><span class="line">  fn()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">doFoo(obj1.foo)    <span class="comment">//"global"</span></span><br></pre></td></tr></table></figure>
+<p>特殊情况7: 原型链和 getter/setter中的 this，都指向调用方法的对象（具体见MDN）</p>
+<p>S3 函数调用时显式绑定指向对象(call/apply/bind): 此时this指向 传入的对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  a:<span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bar = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  foo.call(obj1)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar()              <span class="comment">//2</span></span><br><span class="line">bar.call(<span class="built_in">window</span>)   <span class="comment">//2  因为bar函数内部 已经手动固定指向了obj1对象, 不会再改变</span></span><br></pre></td></tr></table></figure>
+<p>S4 使用new创建对象实例时，this指向新创建的对象实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.a = a</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bar = <span class="keyword">new</span> Foo(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">console</span>.log(bar.a)     <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+<p>以上4种情况的优先级是: <code>new构造函数 &gt; 显式调用 &gt; 默认对象调用 &gt; 全局（函数）调用</code></p>
+<p>S5 使用箭头函数，其this 就是  外层函数调用时的this指向对象</p>
+<p>箭头函数没有this, 箭头函数的this值 <code>遵循词法作用域的查找规则（就像是一个普通变量）</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;<span class="attr">a</span>:<span class="number">2</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bar = foo.call(obj1)</span><br><span class="line">bar.call(obj2)           <span class="comment">//1,不是2!, 因为 箭头函数的this 继承自foo()第一次调用时的this指向对象</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-箭头函数其他特点"><a href="#5-箭头函数其他特点" class="headerlink" title=" 5 箭头函数其他特点 "></a><span id="5"> 5 箭头函数其他特点 </span></h2><p>1 Q: 箭头函数和 ES5函数有哪些不同点</p>
+<p>A:<br>S1 箭头函数 没有this / super / arguments, 也没有new.target绑定, 所以这些值的查找规则 遵循词法作用域</p>
+<p>S2 箭头函数不能使用new调用: 箭头函数没有 [[Construct]]方法，因此不能被用为构造函数, 使用new  调用箭头函数会报错</p>
+<p>S3 箭头函数没有原型: 也就是没有prototype属性</p>
+<p>S4 箭头函数不能更改this, 因此虽然可以使用call/apply/bind方法，但this值不会发生改变</p>
+<p>S5 箭头函数 不允许重复的具名参数: 传统函数只有在严格模式下才禁止这种重复</p>
+
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/04/ES6之 Promise详解/" rel="prev" title="ES6之 Promise详解">
-                ES6之 Promise详解 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -611,7 +491,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-博客搭建过程"><span class="nav-number">1.</span> <span class="nav-text">一 博客搭建过程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6之-this-箭头函数详解"><span class="nav-number">1.</span> <span class="nav-text">ES6之 this + 箭头函数详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-预读文档"><span class="nav-number">1.1.</span> <span class="nav-text"> 1 预读文档 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-什么是this"><span class="nav-number">1.2.</span> <span class="nav-text"> 2 什么是this </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-为什么要有this"><span class="nav-number">1.3.</span> <span class="nav-text"> 3 为什么要有this </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-this指向规则"><span class="nav-number">1.4.</span> <span class="nav-text"> 4 this指向规则 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-箭头函数其他特点"><span class="nav-number">1.5.</span> <span class="nav-text"> 5 箭头函数其他特点 </span></a></li></ol></li></ol></div>
             
 
           </div>

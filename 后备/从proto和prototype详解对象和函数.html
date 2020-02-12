@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,">
+  <meta name="keywords" content=",">
 
 
 
@@ -90,18 +90,20 @@
 
 
 
-<meta name="description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
-<meta name="keywords" content="Hexo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hexo博客搭建">
-<meta property="og:url" content="http://yoursite.com/2019/04/21/hexo博客搭建/index.html">
+<meta name="description" content="一 前言在学JS过程中，之前一直对函数和对象的关系有疑惑。一方面，在JS中 函数也是对象；另一方面，对象却又是通过构造函数实现的实例那么他们的关系到底是什么?">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="website">
+<meta property="og:title" content="从__proto__和prototype详解对象和函数">
+<meta property="og:url" content="http://yoursite.com/后备/从proto和prototype详解对象和函数.html">
 <meta property="og:site_name" content="Ygm的博客">
-<meta property="og:description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
+<meta property="og:description" content="一 前言在学JS过程中，之前一直对函数和对象的关系有疑惑。一方面，在JS中 函数也是对象；另一方面，对象却又是通过构造函数实现的实例那么他们的关系到底是什么?">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-21T13:45:15.788Z">
+<meta property="og:image" content="https://s1.ax1x.com/2018/06/21/PSHSEj.jpg">
+<meta property="og:updated_time" content="2018-07-29T15:06:51.713Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo博客搭建">
-<meta name="twitter:description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
+<meta name="twitter:title" content="从__proto__和prototype详解对象和函数">
+<meta name="twitter:description" content="一 前言在学JS过程中，之前一直对函数和对象的关系有疑惑。一方面，在JS中 函数也是对象；另一方面，对象却又是通过构造函数实现的实例那么他们的关系到底是什么?">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/06/21/PSHSEj.jpg">
 
 
 
@@ -131,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/21/hexo博客搭建/">
+  <link rel="canonical" href="http://yoursite.com/后备/从proto和prototype详解对象和函数.html">
 
 
 
 
 
-  <title>hexo博客搭建 | Ygm的博客</title>
+  <title>从__proto__和prototype详解对象和函数 | Ygm的博客</title>
   
 
 
@@ -285,208 +287,66 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/hexo博客搭建/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ygm">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ygm的博客">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">hexo博客搭建</h1>
-        
+	<h1 class="post-title" itemprop="name headline">从__proto__和prototype详解对象和函数</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T16:54:58+08:00">
-                2019-04-21
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  202
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p>这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。</p>
-<p>因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。<br><a id="more"></a></p>
-<h2 id="一-博客搭建过程"><a href="#一-博客搭建过程" class="headerlink" title="一 博客搭建过程"></a>一 博客搭建过程</h2><p>1 Q: 如何搭建博客</p>
-<p>S1 实现基本博客功能，参考这个文档即可: <a href="http://fangzh.top/2018/2018090514/" target="_blank" rel="noopener">hexo教程：github page+独立域名搭建(1)</a></p>
-<p>S2 配置博客主题，依次参考以下文档:</p>
-<p><a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">01 hexo的next主题个性化配置教程</a></p>
-<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">02 next官方文档</a></p>
-<p><a href="https://www.zydarchen.top/20170707/4_hello_blog" target="_blank" rel="noopener">03 底部文字居中</a></p>
-<p><a href="https://www.zhyong.cn/posts/ca02/" target="_blank" rel="noopener">04 代码块复制功能</a></p>
-<p>S3 利用git分支进行多终端工作，具体可见:</p>
-<p><a href="http://fangzh.top/2018/2018090715/" target="_blank" rel="noopener">hexo教程:基本配置+更换主题+多终端工作+coding page部署分流(2)</a></p>
-<p>S4 发布步骤,代码见下:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo s --debug</span><br><span class="line"></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+      <div class="post-body">
+        
+        
+          <h2 id="一-前言"><a href="#一-前言" class="headerlink" title="一 前言"></a>一 前言</h2><p>在学JS过程中，之前一直对函数和对象的关系有疑惑。一方面，在JS中 函数也是对象；另一方面，对象却又是通过构造函数实现的实例<br>那么他们的关系到底是什么?<br><a id="more"></a></p>
+<p>PS: 关于对象是什么，以及对象是 通过构造函数实现的，可参考<br><a href="https://www.kancloud.cn/kancloud/javascript-prototype-closure/66343" target="_blank" rel="noopener">01 深入理解javascript原型和闭包(1-2)</a></p>
+<h2 id="二-前置知识和规则"><a href="#二-前置知识和规则" class="headerlink" title="二 前置知识和规则"></a>二 前置知识和规则</h2><p>在具体介绍之前，先介绍一下前置知识，这是理解下文的基础</p>
+<p>S1 <code>对象</code>:<br>  A1 对象是 一组key-value 数据(即属性) 的集合;<br>    方法本质上是 属性值是函数的 特殊属性;</p>
+<p>S2 每个对象A 都有一个<code>__proto__属性</code><br>  A1 <strong>proto</strong>属性的特点: 指向另一个对象B, 我们可以极不准确的认为，B是A的 “父对象”;<br>  A2 <strong>proto</strong>属性的作用: 通过它，对象A除了可以访问自身定义的属性值(包括特殊属性—方法)，还可以访问B对象的属性;</p>
+<p>S3 <code>函数</code>:<br>  A1 函数是 一个有特殊属性(prototype属性) 的特殊对象，<br>    换言之，函数也是对象，可以具有属性，它同时具有<strong>proto</strong>属性和prototype属性;<br>    函数对象的最大作用是: 它具有独立作用域 + 可以独立封装/执行一段代码片段，具有复用性;</p>
+<p>  A2 prototype属性的特点: 函数对象F的prototype属性，必然指向一个叫做 F.prototype的对象:<br>    如果这个F.prototype对象 已存在，  那就直接指向它;<br>    如果这个F.prototype对象 还不存在，那就立刻在函数定义执行后生成它;</p>
+<p>  A3 prototype属性的作用: 当函数被作为特殊的构造函数使用时，可以让新创建出来的 实例对象可以继承 F.prototype对象的属性，<br>    换言之，<br>    它的作用就是 引导 实例对象的<strong>proto</strong>属性，使其指向F.prototype对象，从而构成原型链</p>
+<p>PS: 关于prototype属性，可参考<br><a href="https://www.kancloud.cn/kancloud/javascript-prototype-closure/66344" target="_blank" rel="noopener">01 深入理解javascript原型和闭包(3)</a><br><a href="https://www.zhihu.com/question/35442532" target="_blank" rel="noopener">02 JS中先有Object还是先有Function</a></p>
+<h2 id="三-构造-函数和对象-的过程详解"><a href="#三-构造-函数和对象-的过程详解" class="headerlink" title="三 (构造)函数和对象 的过程详解"></a>三 (构造)函数和对象 的过程详解</h2><p>S1<br>  A1 首先，浏览器内置了一个对象，叫做<code>Object.prototype</code>, 它是一个对象 + 对象都有<strong>proto</strong>属性<br>    ES规定了: <code>Object.prototype.__proto = null</code>;</p>
+<p>  A2 同时，Object.prototype对象 预先规定了 自己的一些属性和方法 (如 toSting方法);</p>
+<p>S2<br>  A1 接着，浏览器又实现了另一个对象，叫做<code>Function.prototype</code>,它也是一个对象 + 对象都有<strong>proto</strong>属性<br>    ES又规定了: <code>Function.prototype.__proto = Object.prototype</code><br>    也就是说，我们可以简单理解为 <code>Object.prototype对象 是 Function.prototype对象 的父对象</code>;</p>
+<p>  A2 同时，<code>Function.prototype对象</code> 也预先规定了 自己的一些属性和方法 (如 apply/call方法);</p>
+<p>S3<br>  A1 再后，浏览器又又实现了 另2个比较特殊的对象，分别叫做<code>Function函数对象</code> 和 <code>Object函数对象</code><br>  根据博文第二部分内容可知， 这2个都有一个独有的属性, 就是 <code>prototype属性</code><br>  所以， Function 函数(对象) / Object函数(对象) 就同时有这两个属性 <strong>proto</strong> + prototype ;</p>
+<p>  A2 因为 函数对象F的prototype属性，必然指向一个叫做 F.prototype的对象，所以:<br>  Function.prototype值 = <code>Function.prototype对象</code> (即 S2步骤 浏览器实现的内置对象),<br>  Object.prototype值   = <code>Object.prototype对象</code>   (即 S1步骤 浏览器实现的内置对象);</p>
+<p>  A3 同时，ES规定:<br>  Function.<strong>proto</strong>值 = Function.prototype对象, Object.<strong>proto</strong>值 = Function.prototype对象,<br>  也就是说，可以理解为: <code>Function.prototype对象 同时是  Object函数对象 和 Function函数对象 的父对象</code>;</p>
+<p>S4<br>  A1 有了 Object函数对象 和 Function函数对象，我们就可以构造出自己的 object实例对象 和 function实例对象了;</p>
+<p>  A2 实例对象的<strong>proto</strong>属性值 指向的是 <code>构造函数对象的prototype的 值对象</code>,<br>  也就是说，实例对象和 <code>(构造)函数对象的 原型对象</code>之间， 通过 <strong>proto</strong>属性和prototype属性，建立了联系<br>  这就是<code>原型链</code></p>
+<p>S5<br>  A1 同理， Array等函数(对象)，也都有 <strong>proto</strong>属性 和 prototype属性，且 <strong>proto</strong>值 = <code>Function.prototype对象</code><br>  也就是说，我们可以简单理解为 <code>Function.prototype对象 还构造出了 Array等其他函数对象</code></p>
+<p>综合上面所有内容，一张经典图理解为:<br><img src="https://s1.ax1x.com/2018/06/21/PSHSEj.jpg" alt="PSHSEj.jpg"></p>
+<p>小结一下就是:</p>
+<blockquote>
+<ol>
+<li>所有对象(包括函数)都有 <strong>proto</strong>原型属性;</li>
+<li>只有 (构造)函数 才有prototype属性;</li>
+<li>构造函数的 <strong>proto</strong>原型属性 与 它的prototype属性 不是一回事<br>前者是它作为对象时的属性，表示这个函数是谁生的, 或者说是在谁的基础上扩展来的<br>后者是它作为一个构造函数时特有的属性，即用它来new一个对象时，这个被new出来的对象是用谁做模版的;</li>
+</ol>
+</blockquote>
+<p>PS: 关于函数和对象的 关系，可参考<br><a href="https://www.kancloud.cn/kancloud/javascript-prototype-closure/663445" target="_blank" rel="noopener">01 深入理解javascript原型和闭包(4-7)</a><br><a href="https://github.com/creeperyang/blog/issues/9" target="_blank" rel="noopener">03 从<strong>proto</strong>和prototype来深入理解JS对象和原型链;</a><br><a href="https://github.com/mqyqingfeng/Blog/issues/2" target="_blank" rel="noopener">04 JavaScript深入之从原型到原型链</a></p>
+<h2 id="四-参考文档"><a href="#四-参考文档" class="headerlink" title="四 参考文档"></a>四 参考文档</h2><p>&emsp;&emsp;<a href="https://www.kancloud.cn/kancloud/javascript-prototype-closure/66343" target="_blank" rel="noopener">01深入理解javascript原型和闭包(1-7)</a></p>
+<p>&emsp;&emsp;<a href="https://www.zhihu.com/question/35442532" target="_blank" rel="noopener">02 JS中先有Object还是先有Function;</a></p>
+<p>&emsp;&emsp;<a href="https://github.com/creeperyang/blog/issues/9" target="_blank" rel="noopener">03 深入理解JS对象和原型链;</a></p>
+<p>&emsp;&emsp;<a href="https://github.com/mqyqingfeng/Blog/issues/2" target="_blank" rel="noopener">04 JavaScript深入之从原型到原型链</a></p>
+
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/04/ES6之 Promise详解/" rel="prev" title="ES6之 Promise详解">
-                ES6之 Promise详解 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -611,7 +471,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-博客搭建过程"><span class="nav-number">1.</span> <span class="nav-text">一 博客搭建过程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-前言"><span class="nav-number">1.</span> <span class="nav-text">一 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-前置知识和规则"><span class="nav-number">2.</span> <span class="nav-text">二 前置知识和规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-构造-函数和对象-的过程详解"><span class="nav-number">3.</span> <span class="nav-text">三 (构造)函数和对象 的过程详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-参考文档"><span class="nav-number">4.</span> <span class="nav-text">四 参考文档</span></a></li></ol></div>
             
 
           </div>
