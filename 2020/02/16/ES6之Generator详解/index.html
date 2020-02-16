@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content=",,,,,,,">
+  <meta name="keywords" content="ES6 Generator,">
 
 
 
@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="本文介绍了ES6中 生成器 相关知识点。">
-<meta name="keywords" content="ES6 生成器">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ES6之 生成器详解">
-<meta property="og:url" content="http://yoursite.com/后备/ES6之 生成器详解.html">
+<meta name="description" content="本文介绍了ES6中 Generator生成器 相关知识点。">
+<meta name="keywords" content="ES6 Generator">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6之 Generator详解">
+<meta property="og:url" content="http://yoursite.com/2020/02/16/ES6之Generator详解/index.html">
 <meta property="og:site_name" content="Ygm的博客">
-<meta property="og:description" content="本文介绍了ES6中 生成器 相关知识点。">
+<meta property="og:description" content="本文介绍了ES6中 Generator生成器 相关知识点。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-08T10:38:09.544Z">
+<meta property="og:updated_time" content="2020-02-16T06:24:49.907Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6之 生成器详解">
-<meta name="twitter:description" content="本文介绍了ES6中 生成器 相关知识点。">
+<meta name="twitter:title" content="ES6之 Generator详解">
+<meta name="twitter:description" content="本文介绍了ES6中 Generator生成器 相关知识点。">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/后备/ES6之 生成器详解.html">
+  <link rel="canonical" href="http://yoursite.com/2020/02/16/ES6之Generator详解/">
 
 
 
 
 
-  <title>ES6之 生成器详解 | Ygm的博客</title>
+  <title>ES6之 Generator详解 | Ygm的博客</title>
   
 
 
@@ -285,70 +285,219 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/16/ES6之Generator详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ygm">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ygm的博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">ES6之 生成器详解</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>本文介绍了ES6中 生成器 相关知识点。<br><a id="more"></a></p>
-<h1 id="ES6之-生成器-详解"><a href="#ES6之-生成器-详解" class="headerlink" title="ES6之 生成器 详解"></a>ES6之 生成器 详解</h1><p>目录:</p>
+          <h1 class="post-title" itemprop="name headline">ES6之 Generator详解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-16T14:22:32+08:00">
+                2020-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES6-Generator/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6 Generator</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  708
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文介绍了ES6中 Generator生成器 相关知识点。<br><a id="more"></a></p>
+<p>目录:</p>
 <p>1 <a href="#1">预读文档</a></p>
-<p>2 <a href="#2">生成器基本概念</a></p>
-<p>3 <a href="#3">生成器常见使用</a></p>
-<h2 id="1-预读文档"><a href="#1-预读文档" class="headerlink" title=" 1 预读文档 "></a><span id="1"> 1 预读文档 </span></h2><p>1 <a href="https://legacy.gitbook.com/book/oshotokill/understandinges6-simplified-chinese/details" target="_blank" rel="noopener">深入理解ES6</a></p>
-<p>2 <a href="http://es6.ruanyifeng.com/#docs/generator" target="_blank" rel="noopener">Generator 函数的语法</a></p>
-<p>3 <a href="https://github.com/mqyqingfeng/Blog/issues/99" target="_blank" rel="noopener">ES6 系列之 Generator 的自动执行</a></p>
+<p>2 <a href="#2">生成器 使用特性</a></p>
+<p>3 <a href="#3">生成器 自动执行</a></p>
+<h2 id="1-预读文档"><a href="#1-预读文档" class="headerlink" title=" 1 预读文档 "></a><span id="1"> 1 预读文档 </span></h2><p>1 <a href="http://es6.ruanyifeng.com/#docs/generator" target="_blank" rel="noopener">Generator 函数的语法</a></p>
+<p>2 <a href="https://github.com/mqyqingfeng/Blog/issues/99" target="_blank" rel="noopener">ES6 系列之 Generator 的自动执行</a></p>
 <p>阅读原因: 直接参考文档</p>
-<h2 id="2-生成器基本概念"><a href="#2-生成器基本概念" class="headerlink" title=" 2 生成器基本概念 "></a><span id="2"> 2 生成器基本概念 </span></h2><p>1 Q: 什么是生成器, 有什么作用</p>
-<p>A: S1 生成器是 return迭代器对象的特殊函数 + 内部用yield表达式来 返回迭代器的 当前状态</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">yield</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">yield</span> <span class="number">3</span></span><br><span class="line">  <span class="keyword">yield</span> <span class="number">4</span></span><br><span class="line">  <span class="keyword">yield</span> <span class="number">5</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">6</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> v <span class="keyword">of</span> foo()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)          <span class="comment">// 1 2 3 4 5</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// S1 temp = foo(), temp = &#123; next: &#123;xxx&#125;, [Symbol.iterator] = temp &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// S2 for..of自动调用  temp[Symbol.iterator](), 且 temp[Symbol.iterator]() === temp 为true  +  temp = &#123; next: &#123;xxx&#125;, &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// S3 for..of自动调用 next()生成   &#123;value: xxx, done: xxx&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// S4 yieldA 会自动在调用next()时，把A传入返回的&#123;value: A, done: hasNoyield&#125;</span></span><br></pre></td></tr></table></figure>
-<p>2 Q: yield表达式的作用是什么</p>
-<p>A: S1 yield 返回当前迭代器的状态值，状态值就是<code>yield A</code>中的 A;</p>
-<p>S2 <code>yield A</code>语句默认返回的值是undefined, 可以通过next(C),把C赋值给 <code>上一个yield表达式的返回值</code></p>
-<p>S3 每次执行next(),都会在yield出暂停，再次执行时从暂停出再继续</p>
-<p>代码举例:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; <span class="literal">true</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> reset = <span class="keyword">yield</span> i;</span><br><span class="line">    <span class="keyword">if</span>(reset) &#123; i = <span class="number">-1</span>; &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = f();</span><br><span class="line"></span><br><span class="line">g.next()       <span class="comment">// &#123; value: 0, done: false &#125;</span></span><br><span class="line">g.next()       <span class="comment">// &#123; value: 1, done: false &#125;</span></span><br><span class="line">g.next(<span class="literal">true</span>)  <span class="comment">// &#123; value: 0, done: false &#125;,  因为ture被赋值给 上一次的yiled表达式返回值了</span></span><br></pre></td></tr></table></figure>
-<p>3 Q: 如何理解 生成器的throw方法</p>
-<p>A: S1 生成器函数G返回的 迭代器对象i，具有<code>i.throw()方法</code>, 可以监测G函数内部程序是否报错</p>
-<p>S2 G内部的try..catch只能捕获一次i.throw()抛出的错误，如果继续抛出错误，可被G函数内外 设置的 <code>try...catch</code>语句捕获;</p>
-<p>若都没有 + 发生错误时, 程序会停止运行(即 <code>error被catch捕获的冒泡性</code>)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> g = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">yield</span></span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'内部捕获'</span>, e)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i = g()</span><br><span class="line">i.next()</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  i.throw(<span class="string">'a'</span>)</span><br><span class="line">  i.throw(<span class="string">'b'</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'外部捕获'</span>, e)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 内部捕获 a</span></span><br><span class="line"><span class="comment">// 外部捕获 b</span></span><br></pre></td></tr></table></figure>
-<p>4 Q: 如何理解 生成器的return方法</p>
-<p>A: S1 <code>g.return(p1)</code>会终止迭代器的迭代过程，直接状态变成<code>{value: p1, done: true}</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">yield</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">yield</span> <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = gen();</span><br><span class="line"></span><br><span class="line">g.next()          <span class="comment">// &#123; value: 1, done: false &#125;</span></span><br><span class="line">g.return(<span class="string">'foo'</span>)   <span class="comment">// &#123; value: "foo", done: true &#125;</span></span><br><span class="line">g.next()         <span class="comment">// &#123; value: undefined, done: true &#125;</span></span><br></pre></td></tr></table></figure>
-<p>5 Q: yield* 表达式有什么作用</p>
-<p>A: 在 A生成器中 执行B生成器的 迭代器 + 加入B中的yield语句到A中</p>
-<p>S2 本质上, yield* 是 <code>for..of在 生成器C生成的迭代器D 中自动调用next()方法的 + 返回_step().value</code> 语法糖</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'x'</span></span><br><span class="line">  <span class="keyword">yield</span>* foo()</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'y'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 本质上 等同于</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'x'</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> v <span class="keyword">of</span> foo()) &#123;</span><br><span class="line">    <span class="keyword">yield</span> v</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'y'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> v <span class="keyword">of</span> bar())&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)        <span class="comment">// "x", "a", "b", "y"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-生成器常见使用"><a href="#3-生成器常见使用" class="headerlink" title=" 3 生成器常见使用 "></a><span id="3"> 3 生成器常见使用 </span></h2><p>1 Q: generator有哪些常见运用</p>
-<p>A: 最大的作用是 对异步操作进行封装</p>
-<p>S1 生成器可以像写同步代码一样书写 异步操作:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params">url</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="keyword">yield</span> fetch(url)   <span class="comment">// fetch返回的是一个Promise对象</span></span><br><span class="line">  <span class="built_in">console</span>.log(res.name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>S2 但是执行函数时，还是需要<code>手动调用g.next()方法 + 嵌套使用Promise.then()方法</code>, 所以书写很不直观:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> g = gen(<span class="string">'url.do'</span>)</span><br><span class="line"><span class="keyword">let</span> result = g.next()</span><br><span class="line"></span><br><span class="line">result.value.then( <span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> data.json()</span><br><span class="line">&#125;).then( <span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">  g.next(data)      <span class="comment">// 手动调用next()</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>S3 使用回调/promise 实现自动执行generator的函数, 本质是 <code>通过promise状态 来自动接收 g返回的执行权</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params">gen</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> gen = gen()     <span class="comment">// S1 执行生成器获取 迭代器对象</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;   <span class="comment">// S2 返回的是一个promise对象</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> result = gen.next(data)  <span class="comment">//S3 调用next()方法更新 状态值, 返回值为 &#123;value: xxx, done: xxx&#125;</span></span><br><span class="line">      &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">        <span class="keyword">return</span> reject(e)</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (result.done) &#123;<span class="keyword">return</span> resolve(result.value)&#125;   <span class="comment">//S4 迭代器状态结束时: 返回值 + 结束递归调用</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> value = toPromise(result.value)   <span class="comment">//S5 让当前状态值 必然是一个promise对象</span></span><br><span class="line">      value.then( <span class="function"><span class="params">data</span> =&gt;</span> &#123;next(data)&#125; , e =&gt; rejext(e) )    <span class="comment">// S6 data其实就是value</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    next()</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toPromise</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (isPromise(obj)) <span class="keyword">return</span> obj</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">'function'</span> == <span class="keyword">typeof</span> obj) <span class="keyword">return</span> thunkToPromise(obj)</span><br><span class="line">    <span class="keyword">return</span> obj</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPromise</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'function'</span> == <span class="keyword">typeof</span> obj.then</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">thunkToPromise</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        fn(<span class="function"><span class="keyword">function</span>(<span class="params">err, res</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) <span class="keyword">return</span> reject(err)</span><br><span class="line">            resolve(res)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = run;</span><br></pre></td></tr></table></figure>
-        
-      </div>
-      
-      
+<h2 id="2-生成器-使用特性"><a href="#2-生成器-使用特性" class="headerlink" title=" 2 生成器 使用特性 "></a><span id="2"> 2 生成器 使用特性 </span></h2><p>1 Q: 什么是生成器, 有什么作用</p>
+<p>A: S1 Generator 是一个可以 返回迭代器的 特殊函数，它可以用来 控制异步流程;</p>
+<p>S2 通过 yield关键字+next()方法 来控制 生成器的状态切换;</p>
+<p>2 Q: generator使用特性 有哪些</p>
+<p>A: S1 返回的是 一个迭代器对象g: { next() {value: xxx, done: xxx } } ==&gt; for..of/扩展运算符</p>
+<p>S2 g.next(p1)每次都会执行内代码 直到yield语句处 + p1参数值就是yield语句返回值</p>
+<p>S3 g.throw(xx)的报错 可以被内外 try…catch语句捕获到</p>
+<p>S4 g.return(xx) 会让 迭代器终止</p>
+<p>S5 yield* YYY 相当于 for..of遍历执行YYY里的 [Symbol.Iterator]接口</p>
+<h2 id="3生成器-自动执行"><a href="#3生成器-自动执行" class="headerlink" title=" 3生成器 自动执行 "></a><span id="3"> 3生成器 自动执行 </span></h2><p>1 Q: 如何让 生成器可以自动执行 异步流程</p>
+<p>A: S1 方法一: 基于Promise的 Generator自动执行器:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params">generator</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> gen = generator()  <span class="comment">//S1 启动迭代器</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> ret = gen.next(data)    <span class="comment">//S2 返回的是迭代器 &#123;value: Promsie对象,  done: xxx&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (ret.done) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    ret.value.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;  <span class="comment">// S3 data是上一次yield的 异步操作的  返回值</span></span><br><span class="line">      next(data)  <span class="comment">// 把值传入生成器内部，再次调用 gen.next(), 执行到下一次的 yield语句暂停处</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  next()</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>S2 方法二: 基于Thunk函数的 Generator自动执行器</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params">generator</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> gen = generator()  <span class="comment">//S1 启动迭代器</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> ret = gen.next(data)    <span class="comment">//S2 返回的是迭代器 &#123;value: Thunk函数,  done: xxx&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (ret.done) <span class="keyword">return</span>;</span><br><span class="line">  </span><br><span class="line">    ret.value(next)  <span class="comment">// S3 next接收的data参数, 就是上一次的 异步执行的结果</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  next()</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>S3 方法三: Co通用版本的 Generator自动执行器</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params">gen</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> gen = gen()   <span class="comment">// S1 启动生成器, 返回一个迭代器对象 &#123;next() &#123;...&#125; &#125;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;  <span class="comment">// S1 返回一个Promsie: 可以使后续获取到 gen的结果值</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">try</span> &#123;  <span class="comment">// S2 错误捕获, 防止yield处 的异步操作 执行错误</span></span><br><span class="line">        <span class="keyword">let</span> ret = gen.next(data)  <span class="comment">// S3 ret是 当前状态:  &#123;value: Promise/Thunk函数, done: xxx&#125;</span></span><br><span class="line">      &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">        <span class="keyword">return</span> reject(e)</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (ret.done) <span class="keyword">return</span> resolve(ret.value)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> value = toPromise(ret.value)  <span class="comment">//S4 把ret.value 必然转化为一个 Promise对象</span></span><br><span class="line"></span><br><span class="line">      value.then(</span><br><span class="line">        <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123; next(data) &#125;,  <span class="comment">//S5 递归调用 gen.next()</span></span><br><span class="line">        <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;reject(e)&#125;</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    next()</span><br><span class="line"></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPromise</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'function'</span> == <span class="keyword">typeof</span> obj.then;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toPromise</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (isPromise(obj)) <span class="keyword">return</span> obj;</span><br><span class="line">  <span class="keyword">if</span> (<span class="string">'function'</span> == <span class="keyword">typeof</span> obj) <span class="keyword">return</span> thunkToPromise(obj);</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">thunkToPromise</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    fn(<span class="function"><span class="keyword">function</span>(<span class="params">err, res</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) <span class="keyword">return</span> reject(err);</span><br><span class="line">      resolve(res);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ES6-Generator/" rel="tag"><i class="fa fa-tag"></i> ES6 Generator</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/12/ES6之 Iterator详解/" rel="next" title="ES6之 迭代器详解">
+                <i class="fa fa-chevron-left"></i> ES6之 迭代器详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -408,7 +557,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -419,7 +568,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -430,7 +579,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -473,7 +622,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6之-生成器-详解"><span class="nav-number">1.</span> <span class="nav-text">ES6之 生成器 详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-预读文档"><span class="nav-number">1.1.</span> <span class="nav-text"> 1 预读文档 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-生成器基本概念"><span class="nav-number">1.2.</span> <span class="nav-text"> 2 生成器基本概念 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-生成器常见使用"><span class="nav-number">1.3.</span> <span class="nav-text"> 3 生成器常见使用 </span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-预读文档"><span class="nav-number">1.</span> <span class="nav-text"> 1 预读文档 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-生成器-使用特性"><span class="nav-number">2.</span> <span class="nav-text"> 2 生成器 使用特性 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3生成器-自动执行"><span class="nav-number">3.</span> <span class="nav-text"> 3生成器 自动执行 </span></a></li></ol></div>
             
 
           </div>
@@ -505,7 +654,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.3k字</span>
+  <span class="post-count">博客全站共5k字</span>
 </div>
 
 
