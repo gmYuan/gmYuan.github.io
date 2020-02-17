@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content=",,,,">
+  <meta name="keywords" content="async,">
 
 
 
@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="本文主要介绍了类型判断的函数实现。">
-<meta name="keywords" content="类型判断">
-<meta property="og:type" content="website">
-<meta property="og:title" content="类型判断之 类型判断方法">
-<meta property="og:url" content="http://yoursite.com/后备/类型判断之 类型判断方法.html">
+<meta name="description" content="前言本文介绍了 async的函数特性 和 实现原理。">
+<meta name="keywords" content="async">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6之async详解">
+<meta property="og:url" content="http://yoursite.com/2020/02/17/ES6之async详解/index.html">
 <meta property="og:site_name" content="Ygm的博客">
-<meta property="og:description" content="本文主要介绍了类型判断的函数实现。">
+<meta property="og:description" content="前言本文介绍了 async的函数特性 和 实现原理。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-12T15:47:11.831Z">
+<meta property="og:updated_time" content="2020-02-17T08:25:48.229Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="类型判断之 类型判断方法">
-<meta name="twitter:description" content="本文主要介绍了类型判断的函数实现。">
+<meta name="twitter:title" content="ES6之async详解">
+<meta name="twitter:description" content="前言本文介绍了 async的函数特性 和 实现原理。">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/后备/类型判断之 类型判断方法.html">
+  <link rel="canonical" href="http://yoursite.com/2020/02/17/ES6之async详解/">
 
 
 
 
 
-  <title>类型判断之 类型判断方法 | Ygm的博客</title>
+  <title>ES6之async详解 | Ygm的博客</title>
   
 
 
@@ -285,56 +285,215 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/17/ES6之async详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ygm">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ygm的博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">类型判断之 类型判断方法</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>本文主要介绍了类型判断的函数实现。<br><a id="more"></a></p>
-<h1 id="类型判断之-类型判断方法"><a href="#类型判断之-类型判断方法" class="headerlink" title="类型判断之 类型判断方法"></a>类型判断之 类型判断方法</h1><p>目录:</p>
+          <h1 class="post-title" itemprop="name headline">ES6之async详解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-17T16:24:07+08:00">
+                2020-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/async/" itemprop="url" rel="index">
+                    <span itemprop="name">async</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  451
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文介绍了 async的函数特性 和 实现原理。<br><a id="more"></a></p>
+<p>目录:</p>
 <p>1 <a href="#1">预读文档</a></p>
-<p>2 <a href="#3">实现 类型判断函数</a></p>
-<p>3 <a href="#2">判断变量是否是 数组类型</a></p>
-<h2 id="1-预读文档"><a href="#1-预读文档" class="headerlink" title="1 预读文档 "></a><span id="1">1 预读文档 </span></h2><p>1 <a href="https://github.com/mqyqingfeng/Blog/issues/28" target="_blank" rel="noopener">JS专题之 类型判断(上)</a></p>
+<p>2 <a href="#2">async 使用特性</a></p>
+<p>3 <a href="#3">async 实现原理</a></p>
+<h2 id="1-预读文档"><a href="#1-预读文档" class="headerlink" title=" 1 预读文档 "></a><span id="1"> 1 预读文档 </span></h2><p>1 <a href="https://es6.ruanyifeng.com/#docs/async" target="_blank" rel="noopener">async 函数</a></p>
+<p>2 <a href="https://juejin.im/post/5b7ccc65f265da436631a3d9#heading-8" target="_blank" rel="noopener">来尝尝 Async函数这块语法糖</a></p>
 <p>阅读原因: 直接参考文档</p>
-<h2 id="2-实现-类型判断函数"><a href="#2-实现-类型判断函数" class="headerlink" title=" 2 实现 类型判断函数 "></a><span id="2"> 2 实现 类型判断函数 </span></h2><p>1 Q: 写一个函数，可以实现变量的 类型判断</p>
+<p>3 <a href="https://juejin.im/post/5c30375851882525ec200027" target="_blank" rel="noopener">JS 异步编程六种方案</a></p>
+<p>阅读原因: 对JS异步编程方法做了一个小结</p>
+<h2 id="2-async-使用特性"><a href="#2-async-使用特性" class="headerlink" title=" 2 async 使用特性 "></a><span id="2"> 2 async 使用特性 </span></h2><p>1 Q: 什么是async函数, 有什么作用</p>
 <p>A:</p>
-<p>S1 判断基本类型, 可以使用 typeof操作符: <code>String/Number/Boolean/undefined</code> + function + object(null)</p>
-<p>S2 判断引用类型, 可以使用 Object.prototype.toString操作符:  返回形式例为<code>[object Date]</code></p>
-<p>S3 具体思路为: 生成类型映射对象 + 兼容IE6单独判断null/undefined + 根据typeof/object.pty.toString()返回对应数据类型</p>
-<p>代码实现如下:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(val).toLowerCase().split(<span class="string">' '</span>)[<span class="number">1</span>].slice(<span class="number">0</span>,<span class="number">-1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test case</span></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"123"</span></span><br><span class="line">type(str)             <span class="comment">// "string"</span></span><br></pre></td></tr></table></figure>
-<p>具体一点的实现方法为:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> typeObjMap = &#123;&#125;</span><br><span class="line"><span class="string">"String Number Boolean Null Undefined Array Function Object Error Date RegExp"</span>.split(<span class="string">" "</span>).map(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">  typeObjMap[<span class="string">'[object '</span> + item + <span class="string">']'</span>] = item.toLowerCase()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(typeObjMap)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getVariableType</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (o == <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span> + o</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> result = (<span class="keyword">typeof</span> o === <span class="string">'object'</span> || <span class="keyword">typeof</span> o === <span class="string">'function'</span> ? typeObjMap[<span class="built_in">Object</span>.prototype.toString.call(o)] || <span class="string">'object'</span> : <span class="keyword">typeof</span> o)</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test case</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">getVariableType(arr)  <span class="comment">// array</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-判断变量是否是-数组类型"><a href="#3-判断变量是否是-数组类型" class="headerlink" title=" 3 判断变量是否是 数组类型 "></a><span id="3"> 3 判断变量是否是 数组类型 </span></h2><p>1 Q: 如何判断变量是否是数组类型</p>
+<p>S1 async函数返回一个 Promise对象: 内部return的值，是then回调函数的参数 + 内部报错，返回的Promise会是 reject状态</p>
+<p>S2 async函数内部的 所有异步操作都执行完，才会执行 then方法回调函数</p>
+<p>S3 await后面是一个 经过Promise.resolve()方法包装后的 Promise对象</p>
+<p>S4 任何一个 await语句后面的 Promise对象报错/ 变为reject状态, 整个async函数都会中断执行 =&gt; try…catch</p>
+<p>S5 await可以通过Promise.all 并发执行多个异步操作</p>
+<h2 id="3-async-实现原理"><a href="#3-async-实现原理" class="headerlink" title=" 3 async 实现原理 "></a><span id="3"> 3 async 实现原理 </span></h2><p>1 Q: async函数 实现原理是什么</p>
 <p>A:</p>
-<p>S1 通过Array.isArray()方法</p>
-<p>S2 通过instanceof</p>
-<p>S3 通过Objdect.prototype.toString.call()方法</p>
-<p>S4 通过constructor，如果xx是数组，那么 xx.constructor === Array</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(<span class="built_in">arguments</span>))   <span class="comment">//false 因为arguments是类数组，不是数组</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]))   <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span> <span class="keyword">instanceof</span> <span class="built_in">Array</span>) <span class="comment">//fasle</span></span><br><span class="line">  <span class="built_in">console</span>.log([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>] <span class="keyword">instanceof</span> <span class="built_in">Array</span>) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">arguments</span>)) <span class="comment">//[object Arguments]</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])) <span class="comment">//[object Array]</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.constructor === <span class="built_in">Array</span>) <span class="comment">//false</span></span><br><span class="line">  <span class="built_in">arguments</span>.constructor = <span class="built_in">Array</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.constructor === <span class="built_in">Array</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-
-        
-      </div>
-      
-      
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">spawn</span>(<span class="params">genF</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;   <span class="comment">//S1 返回的是 Promsie对象</span></span><br><span class="line">    <span class="keyword">const</span> gen = genF()      <span class="comment">//S2 执行生成器函数, 返回一个迭代器对象 &#123; next() &#123;...&#125; &#125;</span></span><br><span class="line"></span><br><span class="line">    step(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> gen.next(<span class="literal">undefined</span>) &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">nextF</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">let</span> next</span><br><span class="line"></span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        next = nextF()  <span class="comment">//S3 执行g.next()方法, 返回的是一个对象 &#123;value: xxx, done: xxx &#125;</span></span><br><span class="line">      &#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">        <span class="keyword">return</span> reject(e)  <span class="comment">// S5 一旦报错, 就会立刻停止执行, 不再进行递归</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span>(next.done) &#123;</span><br><span class="line">        <span class="keyword">return</span> resolve(next.value)  <span class="comment">// S6 next.done为真时, next.value值是  生成器内部的return返回值</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="built_in">Promise</span>.resolve(next.value).then(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;  <span class="comment">//S4 v是 next.value的值</span></span><br><span class="line">        step(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> gen.next(v) &#125;)</span><br><span class="line">      &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">        step(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> gen.throw(e) &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/async/" rel="tag"><i class="fa fa-tag"></i> async</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/16/ES6之Generator详解/" rel="next" title="ES6之 Generator详解">
+                <i class="fa fa-chevron-left"></i> ES6之 Generator详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -459,7 +618,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类型判断之-类型判断方法"><span class="nav-number">1.</span> <span class="nav-text">类型判断之 类型判断方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-预读文档"><span class="nav-number">1.1.</span> <span class="nav-text">1 预读文档 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-实现-类型判断函数"><span class="nav-number">1.2.</span> <span class="nav-text"> 2 实现 类型判断函数 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-判断变量是否是-数组类型"><span class="nav-number">1.3.</span> <span class="nav-text"> 3 判断变量是否是 数组类型 </span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-预读文档"><span class="nav-number">2.</span> <span class="nav-text"> 1 预读文档 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-async-使用特性"><span class="nav-number">3.</span> <span class="nav-text"> 2 async 使用特性 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-async-实现原理"><span class="nav-number">4.</span> <span class="nav-text"> 3 async 实现原理 </span></a></li></ol></div>
             
 
           </div>
