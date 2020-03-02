@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,">
+  <meta name="keywords" content="Event Loop,">
 
 
 
@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
-<meta name="keywords" content="Hexo">
+<meta name="description" content="前言本文介绍了 Event Loop 的相关知识点。">
+<meta name="keywords" content="Event Loop">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo博客搭建">
-<meta property="og:url" content="http://yoursite.com/2019/04/21/hexo博客搭建/index.html">
+<meta property="og:title" content="浏览器机制之 Event Loop">
+<meta property="og:url" content="http://yoursite.com/2020/03/02/浏览器机制之-Event-Loop/index.html">
 <meta property="og:site_name" content="Ygm的博客">
-<meta property="og:description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
+<meta property="og:description" content="前言本文介绍了 Event Loop 的相关知识点。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-21T13:45:15.788Z">
+<meta property="og:updated_time" content="2020-03-02T13:58:05.429Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo博客搭建">
-<meta name="twitter:description" content="这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。 因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。">
+<meta name="twitter:title" content="浏览器机制之 Event Loop">
+<meta name="twitter:description" content="前言本文介绍了 Event Loop 的相关知识点。">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/21/hexo博客搭建/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/02/浏览器机制之-Event-Loop/">
 
 
 
 
 
-  <title>hexo博客搭建 | Ygm的博客</title>
+  <title>浏览器机制之 Event Loop | Ygm的博客</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/hexo博客搭建/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/浏览器机制之-Event-Loop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ygm">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo博客搭建</h1>
+          <h1 class="post-title" itemprop="name headline">浏览器机制之 Event Loop</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T16:54:58+08:00">
-                2019-04-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-02T21:56:09+08:00">
+                2020-03-02
               </time>
             
 
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/Event-Loop/" itemprop="url" rel="index">
+                    <span itemprop="name">Event Loop</span>
                   </a>
                 </span>
 
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  202
+                  977
                 </span>
               
 
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -417,19 +417,63 @@
       
 
       
-        <p>这周用hexo和github Pages搭建了自己的静态博客，这是过程中的小结记录。</p>
-<p>因为主要是用来给自己备忘的，所以只是直接记录了相关的参考文档。<br><a id="more"></a></p>
-<h2 id="一-博客搭建过程"><a href="#一-博客搭建过程" class="headerlink" title="一 博客搭建过程"></a>一 博客搭建过程</h2><p>1 Q: 如何搭建博客</p>
-<p>S1 实现基本博客功能，参考这个文档即可: <a href="http://fangzh.top/2018/2018090514/" target="_blank" rel="noopener">hexo教程：github page+独立域名搭建(1)</a></p>
-<p>S2 配置博客主题，依次参考以下文档:</p>
-<p><a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">01 hexo的next主题个性化配置教程</a></p>
-<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">02 next官方文档</a></p>
-<p><a href="https://www.zydarchen.top/20170707/4_hello_blog" target="_blank" rel="noopener">03 底部文字居中</a></p>
-<p><a href="https://www.zhyong.cn/posts/ca02/" target="_blank" rel="noopener">04 代码块复制功能</a></p>
-<p>S3 利用git分支进行多终端工作，具体可见:</p>
-<p><a href="http://fangzh.top/2018/2018090715/" target="_blank" rel="noopener">hexo教程:基本配置+更换主题+多终端工作+coding page部署分流(2)</a></p>
-<p>S4 发布步骤,代码见下:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo s --debug</span><br><span class="line"></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文介绍了 Event Loop 的相关知识点。<br><a id="more"></a></p>
+<p>目录:</p>
+<p>1 <a href="#1">预读文档</a></p>
+<p>2 <a href="#2">浏览器 进程与线程</a></p>
+<p>3 <a href="#3">JS的运行机制—— Event Loop</a></p>
+<p>4 <a href="#4">NodeJS 的Event Loop</a></p>
+<h2 id="1-预读文档"><a href="#1-预读文档" class="headerlink" title=" 1 预读文档 "></a><span id="1"> 1 预读文档 </span></h2><p>1 <a href="https://juejin.im/post/5c337ae06fb9a049bc4cd218" target="_blank" rel="noopener">浏览器与Node的 事件循环有何区别</a></p>
+<p>阅读原因: Node.js部分参考，必读</p>
+<p>2 <a href="https://juejin.im/post/5a6547d0f265da3e283a1df7#heading-17" target="_blank" rel="noopener">从浏览器多进程到JS单线程，JS运行机制最全面的一次梳理</a></p>
+<p>3 <a href="https://juejin.im/post/5c9a43175188252d876e5903" target="_blank" rel="noopener">Eventloop不可怕，可怕的是遇上Promise</a></p>
+<p>阅读原因: 第1~3部分 参考文档</p>
+<h2 id="2-浏览器-进程与线程"><a href="#2-浏览器-进程与线程" class="headerlink" title=" 2 浏览器 进程与线程 "></a><span id="2"> 2 浏览器 进程与线程 </span></h2><p>Q1: 什么是进程和线程</p>
+<p>A:</p>
+<p>进程: cpu资源分配的 最小单位 + 进程之间相互独立 + 一个进程由一个/多个 线程组成 </p>
+<p>线程: cpu调度的最小单位 + 多个线程 在同一进程中  共享数据, 从而协作完成任务</p>
+<p>Q2: 浏览器内的进程 有哪些</p>
+<p>A: </p>
+<p>S1 浏览器是多进程的, 简单理解: 每打开一个Tab页，就相当于创建了一个独立的浏览器进程;</p>
+<p>S2 浏览器的进程组成:</p>
+<p>Browser主进程： 只有一个 + 负责各个页面的资源 管理调度</p>
+<p>第三方插件进程：插件支持</p>
+<p>GPU进程：最多一个 + 用于3D绘制等</p>
+<p>浏览器渲染Renderer进程/浏览器内核: 内部多线程 + 负责 页面渲染 / 脚本执行 / 事件处理</p>
+<p>Q3: 浏览器渲染进程内 有哪些线程</p>
+<p>A: </p>
+<p>S1 GUI渲染线程: RenderObject树的 创建与绘制 + 与JS引擎线程 互斥</p>
+<p>S2 JS引擎线程: 执行JS代码</p>
+<p>S3 事件触发线程: 处理点击等事件</p>
+<p>S4 定时触发器线程: 处理延时操作</p>
+<p>S5 异步http请求线程:  处理AJAX请求</p>
+<h2 id="3-JS的运行机制——-Event-Loop"><a href="#3-JS的运行机制——-Event-Loop" class="headerlink" title=" 3 JS的运行机制—— Event Loop "></a><span id="3"> 3 JS的运行机制—— Event Loop </span></h2><p>Q1: JS引擎是单线程的，那么它是如何执行JS代码的</p>
+<p>A: </p>
+<p>S1 JS是单线程的，因此为了避免 异步任务堵塞 =&gt; JS把任务分为 异步任务 和 同步任务;</p>
+<p>S2 同步任务保存在 JS引擎线程管理的 执行栈A中， 依次执行;</p>
+<p>S3 异步任务保存在 事件触发线程中的 一个事件队列B，在JS执行栈空闲时 依次执行;</p>
+<p>S4 setTimeout/setInterval由 定时器线程单独管理，在传入时间后 把回调加入到 事件队列中;</p>
+<p>S5 ES6引入了promise, JS 将任务进一步细分为 宏任务 与 微任务;</p>
+<p>JS的执行流程为:</p>
+<p>script主代码 -&gt; 微任务加入到微任务队列,宏任务加入到宏任务队列 -&gt; 依次执行完 微任务队列内所有任务 -&gt; 页面重新渲染 -&gt; 宏任务2…</p>
+<h2 id="4-NodeJS-的Event-Loop"><a href="#4-NodeJS-的Event-Loop" class="headerlink" title=" 4 NodeJS 的Event Loop "></a><span id="4"> 4 NodeJS 的Event Loop </span></h2><p>1 Q: NodeJS 的Event Loop 流程是什么</p>
+<p>A:</p>
+<p>S1 Node的 Event loop 共分为6个阶段:</p>
+<p>  timers 阶段：执行 setTimeout/setInterval 回调</p>
+<p>  I/O callbacks 阶段</p>
+<p>  idle, prepare 阶段：仅node内部使用</p>
+<p>  poll 阶段：获取新的I/O事件</p>
+<p>  check 阶段：执行 setImmediate 回调</p>
+<p>  close callbacks 阶段</p>
+<p>S2 node中的事件循环的执行顺序大致是：</p>
+<p>外部输入数据–&gt; 轮询阶段(poll)–&gt; 检查阶段(check)–&gt;关闭事件回调阶段(close callback)–&gt;定时器检测阶段(timer)</p>
+<p>–&gt;I/O事件回调阶段(I/O callbacks)–&gt;闲置阶段(idle, prepare)–&gt;轮询阶段（按照该顺序反复运行）…</p>
+<p>2 Q: Node与浏览器的 Event Loop差异 是什么</p>
+<p>A:</p>
+<p>S1 浏览器环境下，微任务的任务队列是每个宏任务 执行完之后执行;</p>
+<p>S2 在Node.js中，微任务会在事件循环的各个阶段之间执行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'timer1'</span>)</span><br><span class="line">  <span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise1'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'timer2'</span>)</span><br><span class="line">  <span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise2'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 浏览器端: timer1=&gt; promise1=&gt; timer2=&gt; promise2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Node.js &gt;=11: 同上</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Node.js &lt;=10:  timer1=&gt; promise1=&gt; timer2=&gt; promise2 或者 timer1=&gt; timer2=&gt; promise1=&gt; promise2</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -446,7 +490,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+            <a href="/tags/Event-Loop/" rel="tag"><i class="fa fa-tag"></i> Event Loop</a>
           
         </div>
       
@@ -459,15 +503,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/02/17/ES6之async详解/" rel="next" title="ES6之async详解">
+                <i class="fa fa-chevron-left"></i> ES6之async详解
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/04/ES6之 Promise详解/" rel="prev" title="ES6之 Promise详解">
-                ES6之 Promise详解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -611,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-博客搭建过程"><span class="nav-number">1.</span> <span class="nav-text">一 博客搭建过程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-预读文档"><span class="nav-number">2.</span> <span class="nav-text"> 1 预读文档 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-浏览器-进程与线程"><span class="nav-number">3.</span> <span class="nav-text"> 2 浏览器 进程与线程 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-JS的运行机制——-Event-Loop"><span class="nav-number">4.</span> <span class="nav-text"> 3 JS的运行机制—— Event Loop </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-NodeJS-的Event-Loop"><span class="nav-number">5.</span> <span class="nav-text"> 4 NodeJS 的Event Loop </span></a></li></ol></div>
             
 
           </div>
