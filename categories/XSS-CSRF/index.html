@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content=",">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -90,18 +90,16 @@
 
 
 
-<meta name="description" content="一 前言目前在做IFE的练习，初步学习到CSS内容，所以做了总结。本博文 主要分为两部分，第一部分介绍HTML的发展，第二部分则介绍了CSS基本概念">
-<meta name="keywords" content="CSS">
+<meta name="description" content="看到更大的世界">
 <meta property="og:type" content="website">
-<meta property="og:title" content="CSS基本知识介绍">
-<meta property="og:url" content="http://yoursite.com/后备/CSS基本知识介绍.html">
+<meta property="og:title" content="Ygm的博客">
+<meta property="og:url" content="http://yoursite.com/categories/XSS-CSRF/index.html">
 <meta property="og:site_name" content="Ygm的博客">
-<meta property="og:description" content="一 前言目前在做IFE的练习，初步学习到CSS内容，所以做了总结。本博文 主要分为两部分，第一部分介绍HTML的发展，第二部分则介绍了CSS基本概念">
+<meta property="og:description" content="看到更大的世界">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-03T23:57:46.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS基本知识介绍">
-<meta name="twitter:description" content="一 前言目前在做IFE的练习，初步学习到CSS内容，所以做了总结。本博文 主要分为两部分，第一部分介绍HTML的发展，第二部分则介绍了CSS基本概念">
+<meta name="twitter:title" content="Ygm的博客">
+<meta name="twitter:description" content="看到更大的世界">
 
 
 
@@ -131,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/后备/CSS基本知识介绍.html">
+  <link rel="canonical" href="http://yoursite.com/categories/XSS-CSRF/">
 
 
 
 
 
-  <title>CSS基本知识介绍 | Ygm的博客</title>
+  <title>分类: XSS CSRF | Ygm的博客</title>
   
 
 
@@ -157,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -283,54 +281,53 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-    
-    
-    <div class="post-block page">
-      <header class="post-header">
+  
+  
+  
+  <div class="post-block category">
 
-	<h1 class="post-title" itemprop="name headline">CSS基本知识介绍</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-        
-        
-          <h2 id="一-前言"><a href="#一-前言" class="headerlink" title="一 前言"></a>一 前言</h2><p>目前在做IFE的练习，初步学习到CSS内容，所以做了总结。<br>本博文 主要分为两部分，第一部分介绍HTML的发展，第二部分则介绍了CSS基本概念<br><a id="more"></a></p>
-<h2 id="二-HTML的发展"><a href="#二-HTML的发展" class="headerlink" title="二 HTML的发展"></a>二 HTML的发展</h2><h3 id="2-1-语义化和结构化的重要性"><a href="#2-1-语义化和结构化的重要性" class="headerlink" title="2.1 语义化和结构化的重要性"></a>2.1 语义化和结构化的重要性</h3><p>S1 便于搜索引擎建立内容索引;<br>S2 便于开发和维护;<br>S3 便于盲人等特殊用户使用</p>
-<h3 id="2-2-为什么要引入CSS"><a href="#2-2-为什么要引入CSS" class="headerlink" title="2.2 为什么要引入CSS"></a>2.2 为什么要引入CSS</h3><p>S1 随着发展， 之前描述结构的HTML同时也需要描述外在表现了<br>&emsp;&emsp;这就造成了 HTML的结构混乱，和代码冗余</p>
-<p>S2 CSS提供了更多的 足够丰富的样式</p>
-<p>S3 减少代码冗余，样式分离后便于代码维护</p>
-<p>S4 可以实现在多个页面上复用同一套基本样式</p>
-<p>S5 独立了样式内容，减少了HTML的文件大小</p>
-<h2 id="三、CSS基本概念术语"><a href="#三、CSS基本概念术语" class="headerlink" title="三、CSS基本概念术语"></a>三、CSS基本概念术语</h2><h3 id="3-1-元素"><a href="#3-1-元素" class="headerlink" title="3.1 元素"></a>3.1 元素</h3><p>S1 每个HTML元素都会生成一个框box,其中包含元素内容</p>
-<p>S2 元素分类<br>&emsp;&emsp;A1 可以分为 替换元素/非替换元素<br>&emsp;&emsp;A2 可以分为 块级元素/行内元素<br>&emsp;&emsp;块级元素框默认会填充 父元素的全部内容区;<br>&emsp;&emsp;<code>在HTML/XHTML中，行内元素不能包含块级元素，但在CSS中没有这种限制</code> (P16)</p>
-<h3 id="3-2-引入CSS"><a href="#3-2-引入CSS" class="headerlink" title="3.2 引入CSS"></a>3.2 引入CSS</h3><p>S1 外部样式表: HTML的 <code>&lt;link&gt;元素</code><br>&emsp;&emsp;A1 有一个<code>media属性</code>，值可以取 screen / print / all ….<br>&emsp;&emsp;A2 一个样式表同时用于多个媒体中: <code>&lt;link rel... media=&quot;screen, print&quot;&gt;</code><br>&emsp;&emsp; A3 候选样式表 <code>&lt;link rel=&quot;alternate stylesheet&quot; title=&quot;Big text&quot;&gt;</code>（P23）</p>
-<p>S2 文档样式表: HTML的 <code>&lt;style&gt;元素</code><br>&emsp;&emsp;A1 @import指令也用于加载外部样式表， 但是它必须是style的第一行内容，否则会被忽略;<br>&emsp;&emsp;A2 和link的候选样式表不同，每个@import指令的样式都会被加载使用;<br>&emsp;&emsp;A3 也可以通过媒体查询，限制导入的外部样式表 (P25)<br>&emsp;&emsp;A4 一般常用在 一个外部样式表中</p>
-<p>S3 内联样式:  HTML的 <code>&lt;xxx元素 style=&quot;xxx&quot;属性&gt;</code></p>
-<h3 id="3-3-CSS实际是如何工作的"><a href="#3-3-CSS实际是如何工作的" class="headerlink" title="3.3 CSS实际是如何工作的"></a>3.3 CSS实际是如何工作的</h3><p>S1 CSS的结构是  CSS 语句 -&gt; CSS规则 -&gt; 选择器+声明语句块  -&gt; 每条声明语句: 属性和值</p>
-<p>S2 处理过程是: 载入HTML -&gt; 解析HTML -&gt; 下载CSS -&gt; 解析CSS -&gt; 创建DOM树 -&gt; 内存表示</p>
-<h2 id="四-文档类型、DOCTYPE切换和浏览器模式"><a href="#四-文档类型、DOCTYPE切换和浏览器模式" class="headerlink" title="四 文档类型、DOCTYPE切换和浏览器模式"></a>四 文档类型、DOCTYPE切换和浏览器模式</h2><h3 id="4-1-文档类型"><a href="#4-1-文档类型" class="headerlink" title="4.1 文档类型"></a>4.1 文档类型</h3><p>S1 我们知道，html和CSS有不同的版本，每个版本的语法内容/有效规则各不相同;<br>S2 浏览器需要有一组规则，从而告诉它如何解析页面的语法规则/内容，这就是DTD(文档类型定义)<br>    它用来明确使用的是哪个版本的解析规则，从而正确处理页面(有效性验证)</p>
-<p>S3 我们通过DOCTYPE声明,来告诉浏览器使用哪个DTD</p>
-<h3 id="4-2-DOCTYPE切换"><a href="#4-2-DOCTYPE切换" class="headerlink" title="4.2 DOCTYPE切换"></a>4.2 DOCTYPE切换</h3><p>S1 根据DOCTYPE是否存在，浏览器选择呈现模式（标准模式/兼容模式），称作 DOCTYPE切换</p>
-<h2 id="五、参考文档"><a href="#五、参考文档" class="headerlink" title="五、参考文档"></a>五、参考文档</h2><p>&emsp;&emsp;<a href="https://book.douban.com/subject/2308234/" target="_blank" rel="noopener">1 CSS权威指南;</a><br>&emsp;&emsp;<a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/How_CSS_works" target="_blank" rel="noopener">2 MDN的 CSS如何工作;</a><br>&emsp;&emsp;<a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/Syntax" target="_blank" rel="noopener">3 MDN的 CSS基本语法;</a><br>&emsp;&emsp;<a href="https://book.douban.com/subject/4736167/" target="_blank" rel="noopener">4 精通CSS;</a></p>
-
-        
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>XSS CSRF<small>分类</small>
+        </h1>
       </div>
+
       
-      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2020/03/08/网络之-XSS-CSRF详解/" itemprop="url">
+              
+                <span itemprop="name">网络之 XSS + CSRF详解</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2020-03-08T17:32:34+08:00" content="2020-03-08">
+          03-08
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
       
     </div>
-    
-    
-    
+
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
@@ -338,10 +335,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -362,17 +355,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -444,22 +428,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-前言"><span class="nav-number">1.</span> <span class="nav-text">一 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-HTML的发展"><span class="nav-number">2.</span> <span class="nav-text">二 HTML的发展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-语义化和结构化的重要性"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 语义化和结构化的重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-为什么要引入CSS"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 为什么要引入CSS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、CSS基本概念术语"><span class="nav-number">3.</span> <span class="nav-text">三、CSS基本概念术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-元素"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-引入CSS"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 引入CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-CSS实际是如何工作的"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 CSS实际是如何工作的</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-文档类型、DOCTYPE切换和浏览器模式"><span class="nav-number">4.</span> <span class="nav-text">四 文档类型、DOCTYPE切换和浏览器模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-文档类型"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 文档类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-DOCTYPE切换"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 DOCTYPE切换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、参考文档"><span class="nav-number">5.</span> <span class="nav-text">五、参考文档</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -601,10 +569,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
